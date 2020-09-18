@@ -1,0 +1,2602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;lblValueCardboardFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbCotationsFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 10</value>
+  </data>
+  <data name="&gt;&gt;lblValueFormat.Parent" xml:space="preserve">
+    <value>tabPageCuttingArea</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblValueCardboardFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;lbCotationsFormat.Parent" xml:space="preserve">
+    <value>tabCotations</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblValueLengthFold.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbTopBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonExport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonPicGEOM.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAR5JREFUWEftlUsSgzAMQzl6zsbBQpHs0HyJCQ2bohlN6mD5ucOC5R+1qROFyxFf
+        kfR7X2RZrOu6WY2MnlZJL+DOMc9axaI3cBYc4kUYXvFUOMTLCuC4nwmH+CCDHHez4RAfRuCjjuF+P2tG
+        bya5M8IhNkQLlHC/w2ouh0t9AQ6xSYF2OJwC5HcEDzN7YlMAm+FwvsAAHEoWQG2Cw98FBC71JTjE5gS+
+        n1Vgbs0iByN7FQ4dQ0LYugBTUW5UCCdD5J95hZyckr2tYsjAKyjEGZn1UV8M1IC5G0ObeesSdxboZi1L
+        jC4wmiv0LsBBRmuE4l0NmDvL/UyjC6B4xGcLPHLW4FBxMUnNd785N9/gtD5afPiEzV9NNM6yIl7tWpYP
+        VaGA7UTO6YQAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="&gt;&gt;cbCotationsFormat.Parent" xml:space="preserve">
+    <value>tabCotations</value>
+  </data>
+  <data name="lblNameArea.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbCotationsFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>370, 7</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblValueArea.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>615, 8</value>
+  </data>
+  <data name="&gt;&gt;lblValueEfficiency.Name" xml:space="preserve">
+    <value>lblValueEfficiency</value>
+  </data>
+  <data name="nudSpaceX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 6</value>
+  </data>
+  <data name="&gt;&gt;tabAllowedPatterns.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbRemainingLeftRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="toolStripButtonPDF.Text" xml:space="preserve">
+    <value>toolStripButtonPDF</value>
+  </data>
+  <data name="pbCut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="splitContainerMain.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pbFold.Name" xml:space="preserve">
+    <value>pbFold</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormat.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pbFold.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonCFF2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudLeftRightMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 8</value>
+  </data>
+  <data name="lblValueLengthFold.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 27</value>
+  </data>
+  <data name="chkbAllowBothDirection.Text" xml:space="preserve">
+    <value>Allow both direction</value>
+  </data>
+  <data name="&gt;&gt;nudLeftRightRemaining.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listBoxSolutions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;cbCardboardFormat.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblValueLengthTotal.Text" xml:space="preserve">
+    <value>: 0.0 m</value>
+  </data>
+  <data name="&gt;&gt;lblSolutions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="splitContainerVert.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;bnFormats.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbRemainingBottomTop.Text" xml:space="preserve">
+    <value>Minimum top margin</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="rbRowsColumns.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="listBoxSolutions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 352</value>
+  </data>
+  <data name="lblNameTotal.Text" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="nudNumberX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="&gt;&gt;lbmm4.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="&gt;&gt;lblNameTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nudLeftRightMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lblNameEfficiency.Text" xml:space="preserve">
+    <value>Efficiency</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowColumnRotation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabMargins.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="lblValueNumbers.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="splitContainerVert.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="lbmm5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbmm5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="nudSpaceY.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthCut.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
+    <value>buttonClose</value>
+  </data>
+  <data name="toolStripButtonOceProCut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="lbmm3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbmm3.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="&gt;&gt;pbCut.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblNameTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 51</value>
+  </data>
+  <data name="toolStripButtonPDF.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="toolStripExportPDF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 22</value>
+  </data>
+  <data name="toolStripExportCF2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 22</value>
+  </data>
+  <data name="lblNameArea.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="&gt;&gt;tabOffsets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabCtrlData.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;nudTopBottomMargin.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="lbRemainingLeftRight.Text" xml:space="preserve">
+    <value>Minimum right margin</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthCut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSolutions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>495, 7</value>
+  </data>
+  <data name="lblValueNumbers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="tabOffsets.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabCtrlData.Name" xml:space="preserve">
+    <value>tabCtrlData</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>margin</value>
+  </data>
+  <data name="lblValueArea.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bnFormats.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tabPageLengthes.Text" xml:space="preserve">
+    <value>Lengthes</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="toolStripButtonExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 36</value>
+  </data>
+  <data name="lbmm2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="lblValueLengthTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lbOffsetX.Name" xml:space="preserve">
+    <value>lbOffsetX</value>
+  </data>
+  <data name="lblValueArea.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 8</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 9</value>
+  </data>
+  <data name="&gt;&gt;nudTopBottomMargin.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lbOffsetY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 10</value>
+  </data>
+  <data name="tabPageCuttingArea.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbmm2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageCuttingArea.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblValueNumbers.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblNameTotal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblValueLengthFold.Text" xml:space="preserve">
+    <value>: 0.0 m</value>
+  </data>
+  <data name="lblValueLengthCut.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblNameArea.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbRemainingBottomTop.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="splitContainerMain.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;nudOffsetY.Name" xml:space="preserve">
+    <value>nudOffsetY</value>
+  </data>
+  <data name="lbmm6.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="&gt;&gt;lbmm2.Name" xml:space="preserve">
+    <value>lbmm2</value>
+  </data>
+  <data name="chkbAllowRowRotation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbmm5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblValueArea.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;nudOffsetX.Parent" xml:space="preserve">
+    <value>tabOffsets</value>
+  </data>
+  <data name="&gt;&gt;cbCotationsFormat.Name" xml:space="preserve">
+    <value>cbCotationsFormat</value>
+  </data>
+  <data name="tabSpacing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="cbRightLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
+  </data>
+  <data name="lblValueLengthCut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="nudOffsetX.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="rbRowsColumns.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblCardboardEfficiency.Text" xml:space="preserve">
+    <value>Efficiency</value>
+  </data>
+  <data name="&gt;&gt;factoryViewer.Type" xml:space="preserve">
+    <value>Pic.Factory2D.Control.FactoryViewer, Pic.Factory2D.Control, Version=10.0.0.10, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbCotationsFormat.Items4" xml:space="preserve">
+    <value>Upper left</value>
+  </data>
+  <data name="&gt;&gt;nudNumberX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPageLengthes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="lblNameEfficiency.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbCardboardFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbmm5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowBothDirection.Parent" xml:space="preserve">
+    <value>tabAllowedPatterns</value>
+  </data>
+  <data name="pbFold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="splitContainerHoriz.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;nudOffsetX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbmm6.Parent" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="toolStripButtonPDF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="nudTopBottomRemaining.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 20</value>
+  </data>
+  <data name="&gt;&gt;lblNameTotal.Parent" xml:space="preserve">
+    <value>tabPageLengthes</value>
+  </data>
+  <data name="tabSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>672, 79</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonAI.Name" xml:space="preserve">
+    <value>toolStripButtonAI</value>
+  </data>
+  <data name="&gt;&gt;lblValueCardboardEfficiency.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblNameFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="chkbAllowBothDirection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 53</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Panel1.Name" xml:space="preserve">
+    <value>splitContainerHoriz.Panel1</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblValueCardboardEfficiency.Parent" xml:space="preserve">
+    <value>tabPageCardboard</value>
+  </data>
+  <data name="&gt;&gt;lblNameArea.Name" xml:space="preserve">
+    <value>lblNameArea</value>
+  </data>
+  <data name="tabPageCuttingArea.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 99</value>
+  </data>
+  <data name="factoryViewer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 39</value>
+  </data>
+  <data name="tabSpacing.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthTotal.Name" xml:space="preserve">
+    <value>lblValueLengthTotal</value>
+  </data>
+  <data name="&gt;&gt;nudTopBottomRemaining.Name" xml:space="preserve">
+    <value>nudTopBottomRemaining</value>
+  </data>
+  <data name="&gt;&gt;pbFold.Parent" xml:space="preserve">
+    <value>tabPageLengthes</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabMargins.Name" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="&gt;&gt;tabCtrlData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblValueCardboardFormat.Parent" xml:space="preserve">
+    <value>tabPageCardboard</value>
+  </data>
+  <data name="splitContainerHoriz.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;nudTopBottomRemaining.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="chkbAllowColumnRotation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 29</value>
+  </data>
+  <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 21</value>
+  </data>
+  <data name="lbOffsetX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkbAllowColumnRotation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="cbCotationsBB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 7</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pbCut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbOffsetY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 30</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="toolStripButtonExport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbRightLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 8</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbmm3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbCotationsFormat.Items3" xml:space="preserve">
+    <value>Upper right</value>
+  </data>
+  <data name="splitContainerMain.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="lblValueCardboardEfficiency.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbCardboardFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 9</value>
+  </data>
+  <data name="&gt;&gt;rbCardboardFormat.Name" xml:space="preserve">
+    <value>rbCardboardFormat</value>
+  </data>
+  <data name="chkbAllowColumnRotation.Text" xml:space="preserve">
+    <value>Allow in column rotation</value>
+  </data>
+  <data name="&gt;&gt;nudTopBottomRemaining.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbRemainingLeftRight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;cbCotationsFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="toolStripImposition.Text" xml:space="preserve">
+    <value>toolStripImposition</value>
+  </data>
+  <data name="lblValueEfficiency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="nudSpaceY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="&gt;&gt;listBoxSolutions.Name" xml:space="preserve">
+    <value>listBoxSolutions</value>
+  </data>
+  <data name="lblNameFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNameEfficiency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="toolStripExportCF2.Text" xml:space="preserve">
+    <value>CF2</value>
+  </data>
+  <data name="&gt;&gt;lbmm3.Name" xml:space="preserve">
+    <value>lbmm3</value>
+  </data>
+  <data name="&gt;&gt;lblNameTotal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblValueCardboardEfficiency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 27</value>
+  </data>
+  <data name="&gt;&gt;tabCotations.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabAllowedPatterns.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;lblValueEfficiency.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblValueFormat.Name" xml:space="preserve">
+    <value>lblValueFormat</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="nudTopBottomRemaining.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;tabPageCardboard.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblCardboardEfficiency.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="chkbAllowBothDirection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tabMargins.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="nudNumberY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="&gt;&gt;lblValueCardboardFormat.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbSpaces.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="chkbAllowBothDirection.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbmm3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblValueCardboardFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 8</value>
+  </data>
+  <data name="&gt;&gt;lbOffsetX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="lbmm5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 10</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Panel2.Parent" xml:space="preserve">
+    <value>splitContainerVert</value>
+  </data>
+  <data name="&gt;&gt;tabPageCardboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPageCuttingArea.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="nudTopBottomMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblNameFormat.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="nudLeftRightRemaining.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 20</value>
+  </data>
+  <data name="tabOffsets.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblValueLengthCut.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbCardboardFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 9</value>
+  </data>
+  <data name="bnFormats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="cbCotationsFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="toolStripExportDXF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 22</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="&gt;&gt;lblValueNumbers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabSpacing.Text" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="lbmm5.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonCFF2.Name" xml:space="preserve">
+    <value>toolStripButtonCFF2</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="cbCotationsFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="toolStripButtonExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAABrJJREFUWEfNl2lTFdYdxvsd+gH6zulM3vSFaWeczJjYulQrVjTKDhUTQHBDELgI
+        F7hsgqCA7AgSiU6oENQYwyIoKrtFlstlu3BZBQQBUdn59ZyDEEi0kBqnnTvPzJ07c87/95z/cs79zczM
+        DP9L/X8AaI7krtLduyXvrRN211ZpYmKCqampdwOkJ1QRrSvF9/i3LPwKHxk0Uluu5P5FNn19fQrinQCZ
+        qdU/B1hYYP6N5ubn32iOubk5ZqVmZ5mREntML2l6Wq2VAFrPPJyt0jl5OJuOjg7Gx8fXD1BdXf1WVVVV
+        UVFZSUVFOeXl5Tx6VMbDBw8ovV/KvXv3KCkpWQbwPJaMk2U6xxy++eUA/9G5kHIutOR6SVMrTiA84Bba
+        kz8IgGu/HGBD0Yb/WjJ1EiBUU4zfiTsC4OraAJeTfnICb3U++/O8r3QvqlxqfmFeAYT43MXvuACwXxfA
+        6i5Y6Wjjx38kJFhHpch9W1sbra2tSs3NzUoGg4GmJj16vZ7GxkYFLgF0XkX4Hr2Dm+3XawNkJFWuApCu
+        l+Tnq6E45TTJfg7k5f6TF6KdVuZ8anrR+eSk1KRaswhQgMbte1ws1wsQ9COAXCBlNBpJTk7metRxaM6l
+        JsMDH6cDXLqUKhw3KdfKub5RuW9oaFDpkgCBngX4uN7G2TJrbYD0hEqiAu+vOoGlXtc3NZEQG0134Xno
+        vs9kdQa5Zw+RFHtObbrofnJZco0ECPDIVwBfHvhqbYBL8RVEBtxbBvix1Wbo6emhuqaaxBAPFtpuwtNK
+        aC/gSfY+Ui7qGBsbWw7++vWkSo0E8Duej8b1exz3XV4bIO1iORHaEgXQ1fVMQSx9Xk++xthhJC8vl6Ik
+        D2ZNd3j5JAN6YtDf+FRByDG7VBd1dQMKQBagrIFD5hlrA6TGlXHWv5hg7yK1+KdyPpiK3Z5IzD9zJPnE
+        ZrpKA6HRA7p0PMnZgvkWC45af7VqjXTvKwH2rgMgJbaMcN9iwoRCfYoIFSAhXoUECwWdLkB76g6nXK5x
+        xD4J690uJJ/8hJcNWlGYGugNp+76Nix2HsLL5YZwfVs5lzojTsFhz68AECgKys9dbHxMXDB2SezfasNl
+        r81MGoKhxR/6o6jL2SkgHPE+cpMzYgBJyUnoYLYOgKSYcsI0dwkT0ytEAMjg7uIWe5ucrFOw2xeF2eYD
+        XPX7M1Ot4WAMgcEY6nN2Y7nrCzRHb+EvgvuLu8DeLH0dABceKudyfAaLCSYD1dTU0lDXSIuhhc72Tnq7
+        uhnoeyrUR0uTgUelpUQGenIj/K9Mt0dBZwQ8i6cudy9Wu51FQX+H1j0fW7O0dQCcf7R87Lo37hvr9bQ2
+        t+HmkMZhi1ilkaEhxkZGGOzvF3D1FBcVExl0mtzQHcyYLog5EQOjKdTm7Mfa7IhIwW1sdq0DIEEAyHwH
+        i/EZJCaYBGhracXUYcLVPlX95u2ax+jwCCODQwrAJDatqqhUEJ/+YSu3o8yY744XRZkAYxn86/pBAeGG
+        1fakdQBEP1Sze6ngJEBXp4n+nj4FEOCZrwCGhwZFCvpVOjrajegbmsRDpYZtm9zZ8ac9FF/cy1xvMgyk
+        w8QVcRJW/OVja1paWtTAeidAfNSDN8EL1AiVAE97+3g2OIiLbYpowx8UwFOR/x5TN8Y2IwZ9M3VPGmg2
+        tLJniz/7turYuenvlKZ8vggweAVeXqXimg1xFyIZGBhQg+qtAD5Hv10Mfipf9bwEkMFHnw3jbJusqlkC
+        dHV2YWxtp0lvEMHrqap8LK7iFg7uiMT6bzF8vj0Ue/N/UHnZCoaz4Hk2VQ/yOBzgSHxSPM+fP18FoQDK
+        ygwEBt5UEPIJJXtXAoyPjjIuFqwEMJm6aGs1CoBm6kWHyE5pFoVques8h/enY7M7VkFY7LTjcZYthtp8
+        HGLd+J3d79FFBpCZmbkKQgFMTLwkN6ccN+uvOXHoG9zssjiwNY4rV66KBVmkpWWSmJhGXFwiUVEXCQ+P
+        RqeLwE8bikajw9snAMvtyUoW2xLZ+9k5dn0SwI5NFpgHWfFb2w1EZEbzWDxos8Q1npmRwagwJyEUgPwi
+        LxOZI5PJpCr2fSRfTfL1XFhYiJOrE4HntKJe9OLUGmiJOEu2qyvf3bqlYiqAJYhXr17x4sUL1S7vI1nt
+        0qGEkU93b29vEiPDyLW3o9rWBr3TlySGhTEi5skywIeQfKj09vaKOqnhjJcXTh99RNTGjWgcHcWVXcfw
+        8PCHBZCSEP1iaNXW1hKq1eLv4aGCy79q8rQ/OICUhJBuJcigaO0hMc5l8KmpKf4NvydA24lFnmoAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="lbmm4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>607, 38</value>
+  </data>
+  <data name="&gt;&gt;factoryViewer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;nudSpaceY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbOffsetY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="tabPageCardboard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;lblValueCardboardFormat.Name" xml:space="preserve">
+    <value>lblValueCardboardFormat</value>
+  </data>
+  <data name="lblValueArea.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblFormat.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbCotationsBB.Items1" xml:space="preserve">
+    <value>Lower left</value>
+  </data>
+  <data name="cbCardboardFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;lblNameNumbers.Parent" xml:space="preserve">
+    <value>tabPageCardboard</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="&gt;&gt;cbTopBottom.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbRemainingBottomTop.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="lbCotationsFormat.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="nudNumberY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 36</value>
+  </data>
+  <data name="&gt;&gt;lblValueArea.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthFold.Parent" xml:space="preserve">
+    <value>tabPageLengthes</value>
+  </data>
+  <data name="&gt;&gt;nudSpaceX.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblNameTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="lbmm3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="lbmm6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="toolStripButtonPicGEOM.Text" xml:space="preserve">
+    <value>Open with PicGEOM</value>
+  </data>
+  <data name="&gt;&gt;lblValueCardboardEfficiency.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonCFF2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthTotal.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chkbAllowColumnRotation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;tabCotations.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;toolStripExportCF2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="lbOffsetY.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;nudLeftRightRemaining.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="&gt;&gt;lbCotationsFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblValueArea.Text" xml:space="preserve">
+    <value>: 0.0 m²</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Panel1.Name" xml:space="preserve">
+    <value>splitContainerVert.Panel1</value>
+  </data>
+  <data name="&gt;&gt;nudSpaceX.Name" xml:space="preserve">
+    <value>nudSpaceX</value>
+  </data>
+  <data name="&gt;&gt;nudLeftRightRemaining.Name" xml:space="preserve">
+    <value>nudLeftRightRemaining</value>
+  </data>
+  <data name="lblValueCardboardEfficiency.Text" xml:space="preserve">
+    <value>: 0.0%</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="tabPageCardboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 99</value>
+  </data>
+  <data name="lbRemainingLeftRight.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="lblValueLengthTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonDXF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageCuttingArea.Parent" xml:space="preserve">
+    <value>tabCtrlData</value>
+  </data>
+  <data name="&gt;&gt;factoryViewer.Name" xml:space="preserve">
+    <value>factoryViewer</value>
+  </data>
+  <data name="splitContainerVert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>684, 481</value>
+  </data>
+  <data name="&gt;&gt;lblNameEfficiency.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCardboardEfficiency.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbmm6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageLengthes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblValueLengthCut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 9</value>
+  </data>
+  <data name="&gt;&gt;lbOffsetX.Parent" xml:space="preserve">
+    <value>tabOffsets</value>
+  </data>
+  <data name="&gt;&gt;rbRowsColumns.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblValueCardboardEfficiency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="toolStripButtonOceProCut.Text" xml:space="preserve">
+    <value>Open with Océ Pro Cut</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbCotationsFormat.Items1" xml:space="preserve">
+    <value>Lower left</value>
+  </data>
+  <data name="nudSpaceX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 20</value>
+  </data>
+  <data name="lblValueFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="toolStripButtonDXF.Text" xml:space="preserve">
+    <value>Open with DXF editing application </value>
+  </data>
+  <data name="lblNameFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="tabAllowedPatterns.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonExport.Name" xml:space="preserve">
+    <value>toolStripButtonExport</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>684, 661</value>
+  </data>
+  <data name="&gt;&gt;lblValueEfficiency.Parent" xml:space="preserve">
+    <value>tabPageCuttingArea</value>
+  </data>
+  <data name="nudOffsetX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 6</value>
+  </data>
+  <data name="&gt;&gt;nudTopBottomMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbTopBottom.Items1" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="lblValueFormat.Text" xml:space="preserve">
+    <value>: 0.0 x 0.0</value>
+  </data>
+  <data name="&gt;&gt;lblNameNumbers.Name" xml:space="preserve">
+    <value>lblNameNumbers</value>
+  </data>
+  <data name="lbmm6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblValueFormat.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;nudOffsetY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="factoryViewer.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbTopBottom.Items" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="listBoxSolutions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;lbRemainingLeftRight.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="lblFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tabMargins.Text" xml:space="preserve">
+    <value>Margins</value>
+  </data>
+  <data name="&gt;&gt;nudLeftRightMargin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="toolStripButtonOceProCut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAcRJREFUWEftlb9KBDEQh/cRfAkfwCewt7a+1tbO2srWRpt7BsFasBVsxVprRTmV
+        VfyDRr4wE2azs3eruFlBfxAvmZlkvkyStbpZWg4lW5XLNQ4kF6QkgKoBMQYA+hUAMfdYAGgQgI/6Mdyu
+        rIZ6d2/hup0AbxeX4X5zK91Y+tjEPVdPB4fhbrLRK9YFeL+6jjsgqZiqh+2dCNIXoq9cAEoHAKUUU5Qt
+        68vJaZitrUcofhXs+ei4UTU2g71LLgDlY1EZJmGn6RlTFbUrBGtxBNixaUyXvgXA7pnDbsUVRWLstgEq
+        blfEtAAoM7a8fHoEiwBez87nJrVyAbxLqC+CMusRqJ8yM9YjALLvU3QBEItpUhp9di7u1iVUX34J84uc
+        izgXoJT+AYoBcDfyV4NcAL1cNN69mDtlL2vXE2TNLwEQzHPEV+9PUwL9BtB498QRz21nzNPTefzisx8o
+        SZEUbbnDVoDd6cL4qAhjdoqfPjFxosgD0E1JSFLMHf8Y5cE2iQcAHBVgjq0A3xLGPwqgiTU5NnsHmAcM
+        a9g4/Xeef5iwtQBK6m8DkHd0gGanoNLudRA7hdRIjkoBaOJWPusYuklKo6r6BIK6P5a972D3AAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="&gt;&gt;tabCotations.Name" xml:space="preserve">
+    <value>tabCotations</value>
+  </data>
+  <data name="&gt;&gt;lbmm2.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="splitContainerMain.SplitterDistance" type="System.Int32, mscorlib">
+    <value>176</value>
+  </data>
+  <data name="&gt;&gt;lblValueNumbers.Parent" xml:space="preserve">
+    <value>tabPageCardboard</value>
+  </data>
+  <data name="&gt;&gt;lbCotationsBBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbmm3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;toolStripImposition.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblSolutions.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="toolStriExportAI.Text" xml:space="preserve">
+    <value>AI</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudLeftRightMargin.Name" xml:space="preserve">
+    <value>nudLeftRightMargin</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowBothDirection.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbCardboardFormat.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="nudLeftRightRemaining.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 36</value>
+  </data>
+  <data name="&gt;&gt;listBoxSolutions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbmm5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="&gt;&gt;cbRightLeft.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="tabCotations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;lbOffsetY.Parent" xml:space="preserve">
+    <value>tabOffsets</value>
+  </data>
+  <data name="&gt;&gt;lbmm1.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="tabCtrlData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblNameEfficiency.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cbCotationsBB.Parent" xml:space="preserve">
+    <value>tabCotations</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="&gt;&gt;lbmm5.Name" xml:space="preserve">
+    <value>lbmm5</value>
+  </data>
+  <data name="lblValueNumbers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="splitContainerMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>684, 661</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="toolStripButtonCFF2.Text" xml:space="preserve">
+    <value>Open with CF2 editing application</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonOceProCut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbCut.Name" xml:space="preserve">
+    <value>pbCut</value>
+  </data>
+  <data name="&gt;&gt;tabOffsets.Name" xml:space="preserve">
+    <value>tabOffsets</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Name" xml:space="preserve">
+    <value>splitContainerMain</value>
+  </data>
+  <data name="lblNameArea.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;toolStripExportCF2.Name" xml:space="preserve">
+    <value>toolStripExportCF2</value>
+  </data>
+  <data name="&gt;&gt;toolStriExportAI.Name" xml:space="preserve">
+    <value>toolStriExportAI</value>
+  </data>
+  <data name="splitContainerHoriz.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 481</value>
+  </data>
+  <data name="&gt;&gt;nudLeftRightMargin.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="cbCotationsBB.Items4" xml:space="preserve">
+    <value>Upper left</value>
+  </data>
+  <data name="&gt;&gt;nudTopBottomRemaining.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbRowsColumns.Name" xml:space="preserve">
+    <value>rbRowsColumns</value>
+  </data>
+  <data name="cbCotationsBB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="cbTopBottom.Items2" xml:space="preserve">
+    <value>Distributed</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lbCotationsBBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNameArea.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="lbmm1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblValueEfficiency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 45</value>
+  </data>
+  <data name="&gt;&gt;nudNumberX.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listBoxSolutions.ItemHeight" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonAI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;lblValueNumbers.Name" xml:space="preserve">
+    <value>lblValueNumbers</value>
+  </data>
+  <data name="lbCotationsBBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 10</value>
+  </data>
+  <data name="lbCotationsBBox.Text" xml:space="preserve">
+    <value>Bounding box</value>
+  </data>
+  <data name="&gt;&gt;lbRemainingBottomTop.Name" xml:space="preserve">
+    <value>lbRemainingBottomTop</value>
+  </data>
+  <data name="tabOffsets.Text" xml:space="preserve">
+    <value>Offsets</value>
+  </data>
+  <data name="&gt;&gt;tabCtrlData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSolutions.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="toolStripButtonAI.Text" xml:space="preserve">
+    <value>Open with AI editing application</value>
+  </data>
+  <data name="lblNameNumbers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 47</value>
+  </data>
+  <data name="&gt;&gt;tabPageCardboard.Parent" xml:space="preserve">
+    <value>tabCtrlData</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNameNumbers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblValueArea.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="&gt;&gt;lblNameEfficiency.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="factoryViewer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 442</value>
+  </data>
+  <data name="cbCotationsBB.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Name" xml:space="preserve">
+    <value>splitContainerVert</value>
+  </data>
+  <data name="tabPageCardboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="lblSolutions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbmm1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 9</value>
+  </data>
+  <data name="&gt;&gt;tabOffsets.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowRowRotation.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="lbmm2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblValueFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="splitContainerMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblValueCardboardFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbCardboardFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bnFormats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbmm6.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="tabAllowedPatterns.Size" type="System.Drawing.Size, System.Drawing">
+    <value>672, 79</value>
+  </data>
+  <data name="nudSpaceX.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="rbCardboardFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabMargins.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabOffsets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="toolStripButtonDXF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="&gt;&gt;lblSolutions.Name" xml:space="preserve">
+    <value>lblSolutions</value>
+  </data>
+  <data name="lbmm6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>418, 10</value>
+  </data>
+  <data name="&gt;&gt;cbCotationsBB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSolutions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbRemainingLeftRight.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;toolStripImposition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbmm1.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="lbmm2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblValueCardboardFormat.Text" xml:space="preserve">
+    <value>: 0.0 x 0.0 (0.0)</value>
+  </data>
+  <data name="&gt;&gt;nudOffsetY.Parent" xml:space="preserve">
+    <value>tabOffsets</value>
+  </data>
+  <data name="&gt;&gt;tabOffsets.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;lblValueCardboardEfficiency.Name" xml:space="preserve">
+    <value>lblValueCardboardEfficiency</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonDXF.Name" xml:space="preserve">
+    <value>toolStripButtonDXF</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblValueNumbers.Text" xml:space="preserve">
+    <value>: 0 (0x0)</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthCut.Parent" xml:space="preserve">
+    <value>tabPageLengthes</value>
+  </data>
+  <data name="listBoxSolutions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 1, 1, 1</value>
+  </data>
+  <data name="&gt;&gt;lbRemainingLeftRight.Name" xml:space="preserve">
+    <value>lbRemainingLeftRight</value>
+  </data>
+  <data name="&gt;&gt;lblValueArea.Name" xml:space="preserve">
+    <value>lblValueArea</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nudLeftRightMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 20</value>
+  </data>
+  <data name="&gt;&gt;lbmm4.Name" xml:space="preserve">
+    <value>lbmm4</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel2.Name" xml:space="preserve">
+    <value>splitContainerMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;lbOffsetY.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabAllowedPatterns.Name" xml:space="preserve">
+    <value>tabAllowedPatterns</value>
+  </data>
+  <data name="splitContainerVert.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbCotationsBBox.Parent" xml:space="preserve">
+    <value>tabCotations</value>
+  </data>
+  <data name="rbRowsColumns.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 36</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowBothDirection.Name" xml:space="preserve">
+    <value>chkbAllowBothDirection</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonPDF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbRightLeft.Items1" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;tabSpacing.Name" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel1.Name" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="lbmm4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageCardboard.Name" xml:space="preserve">
+    <value>tabPageCardboard</value>
+  </data>
+  <data name="rbRowsColumns.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 17</value>
+  </data>
+  <data name="rbCardboardFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="cbCotationsBB.Items2" xml:space="preserve">
+    <value>Lower right</value>
+  </data>
+  <data name="&gt;&gt;tabPageLengthes.Name" xml:space="preserve">
+    <value>tabPageLengthes</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameArea.Parent" xml:space="preserve">
+    <value>tabPageCuttingArea</value>
+  </data>
+  <data name="lbmm4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="&gt;&gt;lbSpaces.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbTopBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 6</value>
+  </data>
+  <data name="&gt;&gt;tabCotations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripExportPDF.Name" xml:space="preserve">
+    <value>toolStripExportPDF</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowRowRotation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTopBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbmm4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;nudOffsetX.Name" xml:space="preserve">
+    <value>nudOffsetX</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel2</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;lbRemainingLeftRight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbmm4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonPicGEOM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonPDF.Name" xml:space="preserve">
+    <value>toolStripButtonPDF</value>
+  </data>
+  <data name="lblNameNumbers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="lbCotationsBBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="nudTopBottomMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 20</value>
+  </data>
+  <data name="&gt;&gt;toolStripExportDXF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="lbRemainingLeftRight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 36</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonPicGEOM.Name" xml:space="preserve">
+    <value>toolStripButtonPicGEOM</value>
+  </data>
+  <data name="&gt;&gt;lbOffsetX.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbmm2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;nudNumberY.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblNameEfficiency.Name" xml:space="preserve">
+    <value>lblNameEfficiency</value>
+  </data>
+  <data name="lblValueLengthFold.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabPageLengthes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 99</value>
+  </data>
+  <data name="pbCut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbRemainingBottomTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 35</value>
+  </data>
+  <data name="lblSolutions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="lbSpaces.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="lbmm3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>607, 11</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripExportDES.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 22</value>
+  </data>
+  <data name="nudNumberY.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="cbCotationsFormat.Items2" xml:space="preserve">
+    <value>Lower right</value>
+  </data>
+  <data name="&gt;&gt;lbOffsetY.Name" xml:space="preserve">
+    <value>lbOffsetY</value>
+  </data>
+  <data name="factoryViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;lblFormat.Parent" xml:space="preserve">
+    <value>tabPageCardboard</value>
+  </data>
+  <data name="&gt;&gt;tabSpacing.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;nudOffsetY.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbmm1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainerVert.SplitterDistance" type="System.Int32, mscorlib">
+    <value>500</value>
+  </data>
+  <data name="tabCotations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;toolStripImposition.Parent" xml:space="preserve">
+    <value>splitContainerVert.Panel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripExportDES.Name" xml:space="preserve">
+    <value>toolStripExportDES</value>
+  </data>
+  <data name="&gt;&gt;lbmm6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Name" xml:space="preserve">
+    <value>splitContainerHoriz</value>
+  </data>
+  <data name="lbOffsetY.Text" xml:space="preserve">
+    <value>Offset Y</value>
+  </data>
+  <data name="&gt;&gt;cbRightLeft.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonDXF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAfhJREFUWEftl79LQlEUx52amqJ/oKEGx7IgCIJobQh0kB40RYVYUFsUNQQNQUS0
+        mIiTYr+GSoqGbHIImqqloYIoKAhJS0T6cXvf1z16Fd/rPb1Rw/vCwfvu/d5zPu+8i08d5WoOK6zWaAor
+        V84NTx1PaU1I0B4dYQMH85bDHZ8tQgS9d85VTz1Pa17YPHq0xPilJaVymZJOqPFgGaIWgHQ+qxX2JZZZ
+        W2S4CBF0N3DLz5IB4D9eYancC3NFOURISbUEvI3cZiwZALQ/+5ZjnTGfNQgZAOIh9sTnvgEQa0qaW/VV
+        C8D75wfr3Z4sFqwQ3KovmKoFMBJy2gCmAbo3x0u+4WREh3owTQO0RoY0828EL6MvmP4VwG3mUdv0nH9l
+        50/XbPE0ps3v35xoaxj3785onulkSFvHmBS7TBRyIfi0vmASATAXONtjPVsTheT4xDWNRRjyDB4uMAR8
+        lIvyGQqmcgAkpWvcERUDGDoDD4phjgDIXx5YMxRMRgBiAeoCAYnrJHEvgk/rCyYjALQbZwFj6gY8Y+ob
+        EHMEIPURoNU4aPjENQ4bHTwUpjPgUn8DiB2qFFgzFEwiAN0hnnXy/oKhOOYxpk7QowCgdADZwcvoC6Y/
+        B+ha97O+nSmpQTfFy+gLJvt1bAPYANX+OTUK5DQN8JvBy3A5HF9foVVHbtvRnQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowColumnRotation.Parent" xml:space="preserve">
+    <value>tabAllowedPatterns</value>
+  </data>
+  <data name="cbRightLeft.Items" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="listBoxSolutions.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbTopBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;tabMargins.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblValueLengthTotal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="toolStripExportPDF.Text" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="lblNameTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tabOffsets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>672, 79</value>
+  </data>
+  <data name="lbCotationsFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkbAllowRowRotation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="lblSolutions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="&gt;&gt;lbRemainingBottomTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblValueLengthTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 51</value>
+  </data>
+  <data name="&gt;&gt;toolStripExportDES.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCotationsFormat.Name" xml:space="preserve">
+    <value>lbCotationsFormat</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormImposition</value>
+  </data>
+  <data name="&gt;&gt;lblCardboardEfficiency.Parent" xml:space="preserve">
+    <value>tabPageCardboard</value>
+  </data>
+  <data name="&gt;&gt;rbRowsColumns.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chkbAllowRowRotation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbCotationsFormat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;toolStripImposition.Name" xml:space="preserve">
+    <value>toolStripImposition</value>
+  </data>
+  <data name="&gt;&gt;timer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageLengthes.Parent" xml:space="preserve">
+    <value>tabCtrlData</value>
+  </data>
+  <data name="bnFormats.Text" xml:space="preserve">
+    <value>Formats</value>
+  </data>
+  <data name="lbOffsetY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="lbRemainingBottomTop.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabCotations.Text" xml:space="preserve">
+    <value>Cotations</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonOceProCut.Name" xml:space="preserve">
+    <value>toolStripButtonOceProCut</value>
+  </data>
+  <data name="cbCotationsFormat.Items" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="lblValueNumbers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblValueEfficiency.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonAI.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAa1JREFUWEdjQAeq82P+U4oV58fc1VoVygY1kjQAMsB0Wcb/6O0tJOOQLfUIR8yO
+        fKI1JZQHaizxAKQ5c2/ffyiXJPDu+yeUkADiFyQ7ghIHfPz5FWxx9r4J/42XpiMcMTtECKqEMKCGA3L3
+        T/r/7vvn/ybLoI6YG/NObWakCFQZfkANB8D0f/39/b/limzSHEENByAn4tAtDRAHgPCsmI9QpbgBJQ74
+        8+/vf5e1xQgLsWCoUtwApIhcB+ADIDNHHUC0A+xX56OUcNTAZsCESbQDjJamghXTAkOtwQ1Aiga9A5zW
+        FIEN+vDzC4r4o08v/3efWYEiho7BluADIEWEHFBzdO5/kOUg9fE72+HiIMuR+dgw2BJ8AKSIkAOOPr3y
+        f9v9k2Afr7i5Dy4O0k/zEDAB1nIgdXnACmfmpc1gR8DkQOI0dwDIYqhSOIAFO4hNcweAgv7ym3vghAhL
+        jKCQAMmB2DR3AEgNsiWwtIBNDhsGqcELQIoIJUJKMNQa3ACkaMAdYLMy97/vxiqqYpinoNbgBiBFo9Xx
+        qANGHUBu5xQfBplJtANoiaHWQAEDAwBmB1Son7skwgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="lbmm2.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="&gt;&gt;tabSpacing.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="nudSpaceY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>348, 6</value>
+  </data>
+  <data name="tabAllowedPatterns.Text" xml:space="preserve">
+    <value>Allowed patterns</value>
+  </data>
+  <data name="bnFormats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 21</value>
+  </data>
+  <data name="lbmm5.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 10</value>
+  </data>
+  <data name="lblCardboardEfficiency.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;bnFormats.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="lblValueLengthCut.Text" xml:space="preserve">
+    <value>: 0.0 m</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Panel2.Name" xml:space="preserve">
+    <value>splitContainerHoriz.Panel2</value>
+  </data>
+  <data name="pbCut.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tabMargins.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbmm6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkbAllowBothDirection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblNameTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;nudSpaceX.Parent" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="&gt;&gt;nudSpaceY.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabAllowedPatterns.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;lblNameNumbers.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabAllowedPatterns.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbmm4.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="buttonClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;nudLeftRightMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="splitContainerHoriz.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="&gt;&gt;lbSpaces.Name" xml:space="preserve">
+    <value>lbSpaces</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>margin</value>
+  </data>
+  <data name="&gt;&gt;lbmm1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageLengthes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRightLeft.Name" xml:space="preserve">
+    <value>cbRightLeft</value>
+  </data>
+  <data name="&gt;&gt;lblFormat.Name" xml:space="preserve">
+    <value>lblFormat</value>
+  </data>
+  <data name="&gt;&gt;nudSpaceX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameArea.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthCut.Name" xml:space="preserve">
+    <value>lblValueLengthCut</value>
+  </data>
+  <data name="&gt;&gt;lblNameArea.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTopBottom.Parent" xml:space="preserve">
+    <value>tabMargins</value>
+  </data>
+  <data name="&gt;&gt;lbmm6.Name" xml:space="preserve">
+    <value>lbmm6</value>
+  </data>
+  <data name="&gt;&gt;factoryViewer.Parent" xml:space="preserve">
+    <value>splitContainerVert.Panel1</value>
+  </data>
+  <data name="tabPageLengthes.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblCardboardEfficiency.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbmm1.Name" xml:space="preserve">
+    <value>lbmm1</value>
+  </data>
+  <data name="tabPageLengthes.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 8</value>
+  </data>
+  <data name="chkbAllowColumnRotation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="rbCardboardFormat.Text" xml:space="preserve">
+    <value>Cardboard format</value>
+  </data>
+  <data name="toolStripButtonAI.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lbOffsetX.Text" xml:space="preserve">
+    <value>Offset X</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthFold.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="lbmm1.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="cbCardboardFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 21</value>
+  </data>
+  <data name="&gt;&gt;cbCotationsBB.Name" xml:space="preserve">
+    <value>cbCotationsBB</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 105</value>
+  </data>
+  <data name="&gt;&gt;pbCut.Parent" xml:space="preserve">
+    <value>tabPageLengthes</value>
+  </data>
+  <data name="lbRemainingBottomTop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNameFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;listBoxSolutions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="splitContainerMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lbmm2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 35</value>
+  </data>
+  <data name="splitContainerHoriz.SplitterDistance" type="System.Int32, mscorlib">
+    <value>352</value>
+  </data>
+  <data name="lbCotationsFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;lbCotationsBBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="toolStripExportDXF.Text" xml:space="preserve">
+    <value>DXF</value>
+  </data>
+  <data name="lbCotationsBBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="toolStripImposition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStripButtonExport.Text" xml:space="preserve">
+    <value>Export...</value>
+  </data>
+  <data name="splitContainerVert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblNameEfficiency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 45</value>
+  </data>
+  <data name="lblValueFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 26</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 10</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbOffsetX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="&gt;&gt;lblNameEfficiency.Parent" xml:space="preserve">
+    <value>tabPageCuttingArea</value>
+  </data>
+  <data name="nudOffsetY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 30</value>
+  </data>
+  <data name="lbmm1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbmm3.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="&gt;&gt;tabPageCuttingArea.Name" xml:space="preserve">
+    <value>tabPageCuttingArea</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowBothDirection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudSpaceY.Parent" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="lbCotationsBBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="bnFormats.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblValueCardboardFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblValueFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbFold.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;listBoxSolutions.Parent" xml:space="preserve">
+    <value>splitContainerHoriz.Panel1</value>
+  </data>
+  <data name="lblNameNumbers.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;rbRowsColumns.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="lblValueEfficiency.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lbOffsetY.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbCotationsBB.Items" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;pbFold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonPicGEOM.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="cbCotationsBB.Items3" xml:space="preserve">
+    <value>Upper right</value>
+  </data>
+  <data name="tabAllowedPatterns.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudOffsetX.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;nudNumberY.Name" xml:space="preserve">
+    <value>nudNumberY</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSpacing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameTotal.Name" xml:space="preserve">
+    <value>lblNameTotal</value>
+  </data>
+  <data name="chkbAllowRowRotation.Text" xml:space="preserve">
+    <value>Allow in row rotation</value>
+  </data>
+  <data name="lblValueNumbers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 47</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Parent" xml:space="preserve">
+    <value>splitContainerVert.Panel2</value>
+  </data>
+  <data name="&gt;&gt;nudTopBottomMargin.Name" xml:space="preserve">
+    <value>nudTopBottomMargin</value>
+  </data>
+  <data name="lblValueCardboardEfficiency.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="chkbAllowColumnRotation.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblCardboardEfficiency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 27</value>
+  </data>
+  <data name="lblValueEfficiency.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbRightLeft.Items2" xml:space="preserve">
+    <value>Distributed</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthTotal.Parent" xml:space="preserve">
+    <value>tabPageLengthes</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabCtrlData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblValueLengthFold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="&gt;&gt;nudNumberY.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="rbCardboardFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblValueEfficiency.Text" xml:space="preserve">
+    <value>: 0.0%</value>
+  </data>
+  <data name="&gt;&gt;bnFormats.Name" xml:space="preserve">
+    <value>bnFormats</value>
+  </data>
+  <data name="lblValueEfficiency.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthFold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripExportDXF.Name" xml:space="preserve">
+    <value>toolStripExportDXF</value>
+  </data>
+  <data name="pbCut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 9</value>
+  </data>
+  <data name="lblValueFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;nudLeftRightRemaining.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lbOffsetX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="lbmm1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="&gt;&gt;lbmm5.Parent" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="&gt;&gt;toolStriExportAI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNameNumbers.Text" xml:space="preserve">
+    <value>Numbers</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;tabCtrlData.Parent" xml:space="preserve">
+    <value>splitContainerHoriz.Panel2</value>
+  </data>
+  <data name="lblNameArea.Text" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="&gt;&gt;lbRemainingBottomTop.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;timer.Name" xml:space="preserve">
+    <value>timer</value>
+  </data>
+  <data name="&gt;&gt;rbCardboardFormat.Parent" xml:space="preserve">
+    <value>splitContainerMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;lblSolutions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripButtonPDF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAeJJREFUWEftl79LgkEcxp2amqJ/oKEGx35BELS0tukgvWtYiDQ0RC01RG0RUkNJ
+        OYSSRUFgOIQFTTkF0VYt0SANL1iZSD8un+tO731573pffaWG94GH1/d7z33v856nos+s7oRGmnVXQrv3
+        7wfbWEtnQoOB1CQZzy45diCzUIeIhx7968F21ta+MHkqt0rYrSPp5WfDTlRdcAzRDECxUqILR87WSF8y
+        XIeIBzpY5He5ARA9jxG9/EL6UwxiW9N7NkOdLKaWGwB8fum9TIb2Is4g3AAQD3Ews/gDAG9pRRaVqxmA
+        j69PMno4U1/QwiwqF0KNAqiEnh6AbYCRg2nDN5wbHqweTNsAvckJGm6F2TJyIfTvAEqVNzoR19zdpaEG
+        3RRuSfhkmdZXLnYMi+Be7MXKciFkBkB99ypTaz57GqvVAkdzJP9wTYGQ3cin6RjqsNiH91IKISsANBZf
+        izUshHuA8TFxvmiMKYWQbAd4c2w3rhyAZ3DPM1yAMvdSCiErAAjbDBBe4wBWO9Cyt0CsAQa7gUP49KrT
+        OgcQs6IxphRCVgDm0yx+MnAI+dPygypmRWNMKYTMAG6aLSMXQn8OMJyOkrHjeVfNH4otIxdC3s+xB+AB
+        NPrnVGX0tA3QSrNlmHy+bwnJPgezIzW5AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="lblNameFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowRowRotation.Name" xml:space="preserve">
+    <value>chkbAllowRowRotation</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonPicGEOM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbRemainingLeftRight.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tabCtrlData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 125</value>
+  </data>
+  <data name="tabPageCardboard.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblValueLengthFold.Name" xml:space="preserve">
+    <value>lblValueLengthFold</value>
+  </data>
+  <data name="&gt;&gt;cbCardboardFormat.Name" xml:space="preserve">
+    <value>cbCardboardFormat</value>
+  </data>
+  <data name="&gt;&gt;cbCotationsFormat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblCardboardEfficiency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="&gt;&gt;lbCotationsBBox.Name" xml:space="preserve">
+    <value>lbCotationsBBox</value>
+  </data>
+  <data name="nudTopBottomMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 7</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowColumnRotation.Name" xml:space="preserve">
+    <value>chkbAllowColumnRotation</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerHoriz</value>
+  </data>
+  <data name="lblNameEfficiency.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormat.Name" xml:space="preserve">
+    <value>lblNameFormat</value>
+  </data>
+  <data name="rbRowsColumns.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="toolStripExportDES.Text" xml:space="preserve">
+    <value>DES</value>
+  </data>
+  <data name="chkbAllowRowRotation.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lbmm3.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 69</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Panel2.Name" xml:space="preserve">
+    <value>splitContainerVert.Panel2</value>
+  </data>
+  <data name="toolStriExportAI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 22</value>
+  </data>
+  <data name="lbCotationsFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lbmm4.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="toolStripImposition.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="tabPageCuttingArea.Text" xml:space="preserve">
+    <value>Cutting area</value>
+  </data>
+  <data name="tabPageCardboard.Text" xml:space="preserve">
+    <value>Carboard format</value>
+  </data>
+  <data name="&gt;&gt;cbRightLeft.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerMain</value>
+  </data>
+  <data name="lblValueLengthFold.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>427, 11</value>
+  </data>
+  <data name="&gt;&gt;splitContainerHoriz.Panel2.Parent" xml:space="preserve">
+    <value>splitContainerHoriz</value>
+  </data>
+  <data name="lbOffsetX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="toolStripButtonCFF2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAfZJREFUWEdjQAeq82P+U4oV58fc1VoVygY1kjQAMsB0Wcb/6O0tJOOQLfUIR8yO
+        fKI1JZQHaizxAKQ5c2/ffyiXJPDu+yeUkADiFyQ7ghIHfPz5FWxx9r4J/42XpiMcMTtECKqEMKCGA3L3
+        T/r/7vvn/ybLoI6YG/NObWakCFQZfkANB8D0f/39/b/limzSHEENByAn4tAtDRAHgPCsmI9QpbgBJQ74
+        8+/vf5e1xQgLsWCoUtwApIhcB+ADIDNHHUC0A+xX56OUcNTAZsCESbQDjJamghXTAkOtwQ1AigaFA0yA
+        RemKm/v+f/j5BawJxEY34NGnl1jFao7O/Q+iQXyYPhgGK8IHQIpADjj69ArYkDxgsRq/sx2MYQbMvLQZ
+        zA/cVItVDFkPSA6ml2gHgBINiA2zABmDxEE+JCQGwqBQBMmBHAQTA/HxApCilpOLwQphmpAxWBEUgEIJ
+        lxgIg0IFFIUgh2DTjxWAFMHKAVwhQCgKQGIgX4PEkYMfphYvACkCpQFQ/F9+cw9rGiAUBTDLt90/Cdbn
+        tKYIRS1eAFIEcgBIEyg4ocJgH8IMQI5TbGKwHAAD3WdWoKjFC0CKBkU5gK6RWhhqDW4AUmSzMve/78Yq
+        qmKYp6DW4AYgRaPV8agDRh1AbucUHwaZSbQDaImh1kABAwMA3Pw6YRMuqHoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripImposition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 39</value>
+  </data>
+  <data name="lblValueLengthTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbFold.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 27</value>
+  </data>
+  <data name="lbSpaces.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 10</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowRowRotation.Parent" xml:space="preserve">
+    <value>tabAllowedPatterns</value>
+  </data>
+  <data name="lblSolutions.Text" xml:space="preserve">
+    <value>Solutions</value>
+  </data>
+  <data name="&gt;&gt;nudSpaceY.Name" xml:space="preserve">
+    <value>nudSpaceY</value>
+  </data>
+  <data name="&gt;&gt;chkbAllowColumnRotation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="lblValueLengthCut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="splitContainerHoriz.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;lblNameNumbers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Panel2.Parent" xml:space="preserve">
+    <value>splitContainerMain</value>
+  </data>
+  <data name="nudOffsetY.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="lbOffsetX.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabMargins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>672, 79</value>
+  </data>
+  <data name="lblCardboardEfficiency.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbmm2.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;cbTopBottom.Name" xml:space="preserve">
+    <value>cbTopBottom</value>
+  </data>
+  <data name="lblValueCardboardFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="&gt;&gt;lblCardboardEfficiency.Name" xml:space="preserve">
+    <value>lblCardboardEfficiency</value>
+  </data>
+  <data name="chkbAllowRowRotation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 5</value>
+  </data>
+  <data name="&gt;&gt;cbCotationsBB.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudOffsetX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="nudTopBottomRemaining.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 33</value>
+  </data>
+  <data name="&gt;&gt;lbSpaces.Parent" xml:space="preserve">
+    <value>tabSpacing</value>
+  </data>
+  <data name="&gt;&gt;nudNumberX.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rbRowsColumns.Text" xml:space="preserve">
+    <value>Number of rows and columns</value>
+  </data>
+  <data name="nudNumberX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 36</value>
+  </data>
+  <data name="lbCotationsFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudNumberX.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;lblValueArea.Parent" xml:space="preserve">
+    <value>tabPageCuttingArea</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Layout...</value>
+  </data>
+  <data name="chkbAllowBothDirection.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="toolStripButtonCFF2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="tabCotations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>672, 79</value>
+  </data>
+  <data name="toolStripButtonAI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="&gt;&gt;rbCardboardFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbRemainingBottomTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="pbFold.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="toolStripButtonDXF.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="toolStripButtonOceProCut.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="&gt;&gt;rbCardboardFormat.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tabPageCuttingArea.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNameNumbers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Space between cuts</value>
+  </data>
+  <data name="&gt;&gt;toolStripExportPDF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbRightLeft.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;nudNumberY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbCardboardFormat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;lbmm4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblValueFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormat.Parent" xml:space="preserve">
+    <value>tabPageCuttingArea</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerVert</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="&gt;&gt;nudNumberX.Name" xml:space="preserve">
+    <value>nudNumberX</value>
+  </data>
+  <data name="tabCotations.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="bnFormats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 9</value>
+  </data>
+  <data name="nudOffsetY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
+  </data>
+  <data name="&gt;&gt;splitContainerMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="nudLeftRightRemaining.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="toolStripImposition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>174, 17</value>
+  </metadata>
+</root>

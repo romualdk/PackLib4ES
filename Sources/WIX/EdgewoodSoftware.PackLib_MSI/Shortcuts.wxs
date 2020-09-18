@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include Config.wxi?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+    <Component Id="ProgramMenuShortcutComp" Guid="{7EEC4FCC-7CD9-453B-B149-C751DCFF1AD7}">
+      <Shortcut Id="ProgramMenuShortCut"
+                Name="PackLib"
+                Description="2D package design application"
+                Target="[Bin]PLMPackLib.exe"
+                WorkingDirectory="Bin"/>
+      <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+      <RegistryValue Root="HKCU"
+                     Key="Software/$(var.ProductManufacturer)/PackLib_ProgramMenu"
+                     Name="installed"
+                     Type="integer"
+                     Value="1"
+                     KeyPath="yes"/>
+    </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="DesktopShortcutComp" Guid="{E75368FE-2CF8-47AF-8CC1-74F9716F8E3A}">
+        <Shortcut Id="DesktopShortCut"
+                  Name="PackLib"
+                  Description="2D package design application"
+                  Target="[Bin]PLMPackLib.exe"
+                  WorkingDirectory="Bin" />
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU"
+                       Key="Software/$(var.ProductManufacturer)/PackLib_Desktop"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+	</Fragment>
+</Wix>

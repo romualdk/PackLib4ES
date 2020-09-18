@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CardboardFormats" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.treedim.com/Pic.Factory2D.Control"
+    xmlns:cbf="http://www.treedim.com/Pic.Factory2D.Control"
+    elementFormDefault="qualified"
+>
+  <!-- BEGIN : CardboardFormats -->
+  <xs:annotation>
+    <xs:documentation>
+      Cardboard formats input file schema
+      Version 9.0.0.0
+    </xs:documentation>
+  </xs:annotation>
+  <!-- Simple types -->
+  <!-- Primitive Types-->
+  <xs:simpleType name="float">
+    <xs:restriction base="xs:float"/>
+  </xs:simpleType>
+  <xs:simpleType name="ListOfFloats">
+    <xs:list itemType="cbf:float"/>
+  </xs:simpleType>
+  <xs:simpleType name="float2">
+    <xs:restriction base="cbf:ListOfFloats">
+      <xs:minLength value="2"/>
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- CardboardFormat -->
+  <xs:element name="fCardboardFormat">
+  <xs:complexType>
+    <xs:annotation>
+      <xs:documentation>
+        Defines a cardboard format.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="name" type="cbf:string"/>
+    <xs:attribute name="dimensions" type="cbf:float2"/>
+  </xs:complexType>
+  </xs:element>
+  <!-- CardboardFormats -->
+  <xs:element name="CardboardFormats">
+    <xs:annotation>
+      <xs:documentation>
+        Defines list of cardboard formats
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cbf:fCardboardFormat" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- END   : CardboardFormats -->
+</xs:schema>

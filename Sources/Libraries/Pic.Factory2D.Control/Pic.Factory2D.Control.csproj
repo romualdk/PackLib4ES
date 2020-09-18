@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B885460B-F114-4B34-8963-9B1CBACB5D8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pic.Factory2D.Control</RootNamespace>
+    <AssemblyName>Pic.Factory2D.Control</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DxfLineTypeConvertionCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DxfLineTypeConvertionCtrl.Designer.cs">
+      <DependentUpon>DxfLineTypeConvertionCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FactoryDataCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FactoryDataCtrl.Designer.cs">
+      <DependentUpon>FactoryDataCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FactoryViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FactoryViewer.Designer.cs">
+      <DependentUpon>FactoryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FactoryViewerBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FactoryViewerBase.Designer.cs">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutCtrlEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Schemas\CardboardFormats.cs" />
+    <Compile Include="Schemas\CardboardFormats.designer.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesLib4NET\DesLib4NET.csproj">
+      <Project>{7cdedaae-8156-4835-9837-55c7cdc67070}</Project>
+      <Name>DesLib4NET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pic.Factory2D\Pic.Factory2D.csproj">
+      <Project>{18305ba6-e8d3-4e21-8c28-1b1a4ab42cac}</Project>
+      <Name>Pic.Factory2D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\treeDiM.ThreadCallback\treeDiM.ThreadCallback.csproj">
+      <Project>{d61900fb-fbf1-4075-bef4-6b828a840050}</Project>
+      <Name>treeDiM.ThreadCallback</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TreeDim.UserControls\treeDiM.UserControls.csproj">
+      <Project>{D75634E3-34AA-4418-A6B6-3647BFF90606}</Project>
+      <Name>treeDiM.UserControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.de.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.es.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.fr.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.it.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.ja.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.pl.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.pt.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.sv.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.zh.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DxfLineTypeConvertionCtrl.resx">
+      <DependentUpon>DxfLineTypeConvertionCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryDataCtrl.resx">
+      <DependentUpon>FactoryDataCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewer.resx">
+      <DependentUpon>FactoryViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.de.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.es.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.fr.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.it.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.ja.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.pl.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.pt.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+      <LastGenOutput>FactoryViewerBase1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.sv.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryViewerBase.zh.resx">
+      <DependentUpon>FactoryViewerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="FormImposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImposition.Designer.cs">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormImposition.de.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.es.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.fr.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.it.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.ja.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.pl.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.pt.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.sv.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImposition.zh.resx">
+      <DependentUpon>FormImposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="LayoutIntroCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LayoutIntroCtrl.Designer.cs">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LayoutIntroCtrl.de.resx">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutIntroCtrl.fr.resx">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutIntroCtrl.it.resx">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutIntroCtrl.ja.resx">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutIntroCtrl.pl.resx">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutIntroCtrl.pt.resx">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutIntroCtrl.resx">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="FormLayoutViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLayoutViewer.Designer.cs">
+      <DependentUpon>FormLayoutViewer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormLayoutViewer.resx">
+      <DependentUpon>FormLayoutViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutIntroCtrl.zh.resx">
+      <DependentUpon>LayoutIntroCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx" />
+    <EmbeddedResource Include="Properties\Resources.ja.resx" />
+    <EmbeddedResource Include="Properties\Resources.it.resx" />
+    <EmbeddedResource Include="Properties\Resources.es.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt.resx" />
+    <EmbeddedResource Include="Properties\Resources.sv.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh.resx" />
+    <EmbeddedResource Include="Properties\Resources.de.resx" />
+    <EmbeddedResource Include="Properties\Resources.pl.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\CursorPan.cur" />
+    <None Include="Resources\ProCut.png" />
+    <None Include="Resources\ExportDXF.png" />
+    <None Include="Resources\ExportCFF2.png" />
+    <None Include="Resources\ExportAi.png" />
+    <None Include="Schemas\CardboardFormats.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="log4net">
+      <Version>2.0.10</Version>
+    </PackageReference>
+    <PackageReference Include="netDXF">
+      <Version>2.2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NuGet.Build.Tasks.Pack">
+      <Version>5.8.0-preview.3.6823</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Sharp3D.Math">
+      <Version>1.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release "$(SolutionDir)Signfile.bat" $(TargetPath)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

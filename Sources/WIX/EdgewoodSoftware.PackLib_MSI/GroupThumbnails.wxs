@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<?include Config.wxi?> 
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"> 
+<Fragment> 
+<DirectoryRef Id="Thumbnails" /> 
+</Fragment> 
+<Fragment> 
+<ComponentGroup Id="ThumbnailsGroup"> 
+<Component Id="cmp667A622F3B536DC32798892919C18FBD" Directory="Thumbnails" Guid="594585A5-288C-4768-9BA3-E25F874A1DAD"> 
+<File Id="filFAE2A73D3E4E3E4E8AAA5B244BED8F5C" KeyPath="yes" Source="$(var.ThumbnailsDir)\Ai.bmp" /> 
+</Component> 
+<Component Id="cmpCBD1CAB2F95E1E01E9D935476CEC25B5" Directory="Thumbnails" Guid="3BE78E04-F789-441C-B0CE-46DE776CC0D1"> 
+<File Id="fil94DFC3073003C24508EE13A82A456FB6" KeyPath="yes" Source="$(var.ThumbnailsDir)\ARD.bmp" /> 
+</Component> 
+<Component Id="cmp8023CB727534B1A6040424C96C467514" Directory="Thumbnails" Guid="0A51A3C9-300D-455B-BCD9-BFC77D2A7A8B"> 
+<File Id="fil01C25B2CF4991875B57C532AFC066F27" KeyPath="yes" Source="$(var.ThumbnailsDir)\Calc.bmp" /> 
+</Component> 
+<Component Id="cmp0E2FD69575BAB7815416A99FD9BF23EF" Directory="Thumbnails" Guid="99887EC9-CB32-4400-8A5F-3940E799AE77"> 
+<File Id="filF869916B6F2B3DB79CBE1156403115CA" KeyPath="yes" Source="$(var.ThumbnailsDir)\Excel.bmp" /> 
+</Component> 
+<Component Id="cmpB3DAE0C803139A9C106B308E45B4558D" Directory="Thumbnails" Guid="4E744E1F-D0DC-49AE-9131-592B349EFBFA"> 
+<File Id="filBFFD1B293687501B88CA55C5E2A2D75B" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder.bmp" /> 
+</Component> 
+<Component Id="cmp56B62590C2242AC499A47D7A3A8B813A" Directory="Thumbnails" Guid="B968970C-AE12-4007-BBF9-404AC9796FF6"> 
+<File Id="fil9BE2C8FE7B1E5295B4EB39A37049CF8D" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder_blue-sky.png" /> 
+</Component> 
+<Component Id="cmp4DD2DC8DC5842D5387CFECC318C0BB6C" Directory="Thumbnails" Guid="69520897-E20E-47F0-81F5-04BA61F75016"> 
+<File Id="filA81C868303E98DE01BD7D745131B62C7" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder_blue.png" /> 
+</Component> 
+<Component Id="cmp80B1A1A29A30E92FEC2124887B88557C" Directory="Thumbnails" Guid="378380A3-EDC7-4D4B-8E2A-9D2369114576"> 
+<File Id="fil3BFFE7C95B720D8DD4FBEC74AFFFEBC1" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder_green.png" /> 
+</Component> 
+<Component Id="cmp743AA60D54065722D84C60AB6EC34059" Directory="Thumbnails" Guid="EE6C8A76-A985-42D2-B331-7D24240A6F12"> 
+<File Id="filD58EE441249DD235EECDE350DC0DEFFB" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder_grey.jpg" /> 
+</Component> 
+<Component Id="cmp35E3627094187EE144CE0960A00CDA26" Directory="Thumbnails" Guid="75637C3F-9956-4686-9521-29B312E5BC64"> 
+<File Id="filC12234874FC1D0874CD7519137A84EC2" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder_lemon.png" /> 
+</Component> 
+<Component Id="cmp55C9A979B923F4BAD0B2CC719F9FF78A" Directory="Thumbnails" Guid="267D6EC9-81A6-4CB9-AB05-909283591332"> 
+<File Id="fil2CF8542C87A4FCB0A858059A93CDBAAD" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder_orange.png" /> 
+</Component> 
+<Component Id="cmpF007F46636E611C3CD0CFF42E454F9B8" Directory="Thumbnails" Guid="15226E3B-1B52-430C-BA74-100A23DF40C7"> 
+<File Id="fil8F27CFC7022E9F05ADD5514767D2589B" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder_purple.png" /> 
+</Component> 
+<Component Id="cmp76F414592CE7263ACF83C0412389F44A" Directory="Thumbnails" Guid="C74409AA-5DDB-48D0-BD81-F327D10892F0"> 
+<File Id="fil0605E8F53FFE264FB4375D2BD174B594" KeyPath="yes" Source="$(var.ThumbnailsDir)\Folder_red.png" /> 
+</Component> 
+<Component Id="cmpD8B132916189EDEA1555A69F1A2CB51F" Directory="Thumbnails" Guid="99ADB045-7DF9-4BFB-BDF6-3A682069D61A"> 
+<File Id="filF589E898B13156F2D0A32EB3AF7DD48B" KeyPath="yes" Source="$(var.ThumbnailsDir)\Image.bmp" /> 
+</Component> 
+<Component Id="cmpA1A7448B458D4964D72291CFE3A85CB3" Directory="Thumbnails" Guid="2C4CD15C-C6EC-4EC7-983D-81D35763090F"> 
+<File Id="filAFE3D1CD9AFC738964A37E919E532C61" KeyPath="yes" Source="$(var.ThumbnailsDir)\pdf.bmp" /> 
+</Component> 
+<Component Id="cmp6B9A7B95796F54E53C7197A7D4F65F01" Directory="Thumbnails" Guid="D5DB0ABC-049A-4AA1-ACB0-988AD4D0F8F2"> 
+<File Id="filBEFFC86D888B57456229F128100C4C32" KeyPath="yes" Source="$(var.ThumbnailsDir)\Picador3D.bmp" /> 
+</Component> 
+<Component Id="cmpE876D2C78C9B737D38064DA2353C585C" Directory="Thumbnails" Guid="95E27211-606A-41A3-8014-4A4B459680A3"> 
+<File Id="filB54ED1B07FBFB3ADF3DFA2B94087C874" KeyPath="yes" Source="$(var.ThumbnailsDir)\PicGEOM.bmp" /> 
+</Component> 
+<Component Id="cmp71CE24D20618DB2AE0596738CD6DB8A9" Directory="Thumbnails" Guid="D6940C01-4BF4-4783-97FB-950F4DFCA6CA"> 
+<File Id="fil146733AA350847AE30D76D3C6C9655A9" KeyPath="yes" Source="$(var.ThumbnailsDir)\Powerpoint.bmp" /> 
+</Component> 
+<Component Id="cmp0610C8E5E01E9FF287140628F9DD0745" Directory="Thumbnails" Guid="DB2E3F74-2126-493F-8C81-BF11FFBADB9C"> 
+<File Id="fil2581243F70F80F70D83093FACF9A98AA" KeyPath="yes" Source="$(var.ThumbnailsDir)\Word.bmp" /> 
+</Component> 
+<Component Id="cmp00379BD15BA9DD9B55F7C5FCABDAB534" Directory="Thumbnails" Guid="C7737832-C2F9-415E-AF9F-626006826586"> 
+<File Id="fil1CA3C3159AE34F2EE97E3008C6ABE653" KeyPath="yes" Source="$(var.ThumbnailsDir)\Writer.bmp" /> 
+</Component> 
+</ComponentGroup> 
+</Fragment> 
+</Wix> 

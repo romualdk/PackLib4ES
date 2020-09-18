@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include Config.wxi?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="EdgewoodSoftware.PackLib_MSI"
+           Language="1033"
+           Version="$(var.ProductVersion)"
+           Manufacturer="$(var.ProductManufacturer)"
+           UpgradeCode="c9cacf3f-a40b-4d15-b72b-fea2859d5e53">
+    <Package Id="*"
+             InstallerVersion="301"
+             Compressed="yes"
+             InstallScope="perMachine"
+             InstallPrivileges="elevated"
+             />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes"/>
+    
+
+    <Feature Id="ProductFeature" Title="EdgewoodSoftware.PackLib_MSI" Level="1">
+      <ComponentGroupRef Id="PicParamGroup"/>
+      <ComponentGroupRef Id="DatabaseGroup"/>
+      <ComponentGroupRef Id="DocumentsGroup"/>
+      <ComponentGroupRef Id="ThumbnailsGroup"/>
+      <ComponentRef Id="ProgramMenuShortcutComp"/>
+      <ComponentRef Id="DesktopShortcutComp"/>
+    </Feature>
+
+    <!-- UI -->
+    <UIRef Id="WixUI_InstallDir" />
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONROOTDIRECTORY" />
+    <WixVariable Id="WixUIBannerBmp" Value=".\Bitmaps\WixBannerBmp.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value=".\Bitmaps\WixDialogBmp.bmp" />
+  </Product>
+</Wix>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?include Config.wxi?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="Bin">
+      <Directory Id="dirAE1C6F65D2C4D2F53041F2CF2D9D86FC" Name="x64" />
+      <Directory Id="dirE59404C5207F63168BB5AE9A44B16FE9" Name="x86" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="PicParamGroup">
+      <Component Id="cmpA6349FDBB7ED10FF3EFB6B5C4052E9AF" Directory="Bin" Guid="BB8C77C4-C56F-45A3-B52E-EF0559BEB188">
+        <File Id="fil662D6331458932F8FECD1EA337A80816" KeyPath="yes" Source="$(var.PicParamBinDir)\app.config" />
+      </Component>
+      <Component Id="cmp3D4CF59B22F9238E034E3966027A5B65" Directory="Bin" Guid="2CFA1BCF-E403-4668-A75D-14784726A1A6">
+        <File Id="fil19855808C4317C4CCA701BA4530D6302" KeyPath="yes" Source="$(var.PicParamBinDir)\DbLinq.dll" />
+      </Component>
+      <Component Id="cmp6F0F1CE471E96CEA4F558B6820461702" Directory="Bin" Guid="B4341472-77AC-41A7-A09E-6332014A8091">
+        <File Id="fil78D25BA25C75FBC8E2E910F246FE1F86" KeyPath="yes" Source="$(var.PicParamBinDir)\DbLinq.Sqlite.dll" />
+      </Component>
+      <Component Id="cmp9AB63657FF74053796BB70EF4EB4DEC1" Directory="Bin" Guid="5BFAC992-D280-4FC2-A815-E307BF4B0751">
+        <File Id="filA2DB7C10CEA132286549E66CED545288" KeyPath="yes" Source="$(var.PicParamBinDir)\DesLib4NET.dll" />
+      </Component>
+      <Component Id="cmpE68B6D1C22D388F58745F5178E13CFFE" Directory="Bin" Guid="1D3C5F7E-8552-4C26-B725-C253811019FB">
+        <File Id="fil824000693C43444D0622930625C3AB51" KeyPath="yes" Source="$(var.PicParamBinDir)\Dxflib4NET.dll" />
+      </Component>
+      <Component Id="cmp930CBE07AAE1544BB3FB756680C5C3F8" Directory="Bin" Guid="2CDE4281-D7CD-4BDE-9E76-489DDA02F8FD">
+        <File Id="filE035868E907E54CE74C93DE115AF6F16" KeyPath="yes" Source="$(var.PicParamBinDir)\EntityFramework.dll" />
+      </Component>
+      <Component Id="cmpBB576ADDBEE2B7C84FAD833D2BA35606" Directory="Bin" Guid="3AB3EB11-94EE-4054-A4DE-ABF3FCFCD7D8">
+        <File Id="filF63F6B7776C8B3BC3D82B4FCEFD35BA8" KeyPath="yes" Source="$(var.PicParamBinDir)\EntityFramework.SqlServer.dll" />
+      </Component>
+      <Component Id="cmp64ABC9E6852047A94D6DF72FA9E08752" Directory="Bin" Guid="B11193A4-521D-4080-A21D-9689834AD802">
+        <File Id="fil1501C576C394FEDC6571A9BD253996F2" KeyPath="yes" Source="$(var.PicParamBinDir)\ICSharpCode.SharpZipLib.dll" />
+      </Component>
+      <Component Id="cmpC1283E8E12295C57F1398DA6F0C65F2A" Directory="Bin" Guid="998A4010-BF7F-4D20-9FBE-A21F13E4A37B">
+        <File Id="fil9543FAA09415C3E09ED66DAA90DB3F45" KeyPath="yes" Source="$(var.PicParamBinDir)\ICSharpCode.TextEditorEx.dll" />
+      </Component>
+      <Component Id="cmp780943FC28ECED51EAB701053D36CD5D" Directory="Bin" Guid="103EEB4A-C76C-4652-A81B-30B71E4AF49D">
+        <File Id="fil26B789A68B3CF6E43CCA499F71DAF83C" KeyPath="yes" Source="$(var.PicParamBinDir)\IxMilia.Dxf.dll" />
+      </Component>
+      <Component Id="cmp2BCF8B7862862DFE06912F20E4439102" Directory="Bin" Guid="475C30E6-85F6-422C-9086-315E641636A1">
+        <File Id="filE240EEFA38D800255F4FBBB29124CA53" KeyPath="yes" Source="$(var.PicParamBinDir)\Localisation_FRA.txt" />
+      </Component>
+      <Component Id="cmp223F7A40DFEA68AB8E5332C1C201B6DC" Directory="Bin" Guid="F1A086CF-C055-4597-99B5-E123B259E0AE">
+        <File Id="fil53216D1158CAC2A725AF4E77F7DA2DDE" KeyPath="yes" Source="$(var.PicParamBinDir)\log4net.dll" />
+      </Component>
+      <Component Id="cmpBEA03C834B2E572B611A831063B2308C" Directory="Bin" Guid="42C7AE09-CD20-4EDC-B2C2-C0D921D41694">
+        <File Id="fil439E08A3D1C204D3DC7ADC18E93BC443" KeyPath="yes" Source="$(var.PicParamBinDir)\OptionsLib.dll" />
+      </Component>
+      <Component Id="cmp0E47FFC3C880B89FB4A5A18EAC58F5E2" Directory="Bin" Guid="B5C5CB15-DF47-43B8-8E42-598D9B19B8AE">
+        <File Id="fil66A531073D446E4DACCB09D61F7EC703" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.DAL.dll" />
+      </Component>
+      <Component Id="cmp3570A7E70E20494ACA5195E6E1DD50DA" Directory="Bin" Guid="448C547C-6D34-4365-BAFA-29215E2C8B64">
+        <File Id="filBE2C324C58261083E81C91EBAD41B5FB" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.DAL.LibraryLoader.dll" />
+      </Component>
+      <Component Id="cmp5A001F54598E29DA90571D1B9ED3E855" Directory="Bin" Guid="8D8EBD90-810D-4253-AAEF-CAD73EFE3DD6">
+        <File Id="fil190E9C4A5273CB0775511FEA4B062CCD" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.Factory2D.Control.dll" />
+      </Component>
+      <Component Id="cmp4BF8DC1178B3ADA367C93BFF5FD4ABA7" Directory="Bin" Guid="7D087CAF-A253-4C76-A6E4-D311A3CEEB68">
+        <File Id="filD4DD677EF3749445A4490CF6BCCF53FC" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.Factory2D.dll" />
+      </Component>
+      <Component Id="cmp697D9A7E8DA902213B06E72A699CC63E" Directory="Bin" Guid="52C75797-D848-4002-905B-BB81491EDF8E">
+        <File Id="fil7C410BA804B0D62D7C48E94F271C1D4F" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.Plugin.Generator.dll" />
+      </Component>
+      <Component Id="cmp928B399D8E96C2180A56B8CE2410383A" Directory="Bin" Guid="9B626C18-56CA-4D54-B915-5FE76FF06916">
+        <File Id="fil9B14B7D50E3E4AF8DA647D30C2AFA54C" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.Plugin.GeneratorCtrl.dll" />
+      </Component>
+      <Component Id="cmp4CF46DB2D1722AAAA77F4183374A9945" Directory="Bin" Guid="EFD15A04-D170-4B77-BF2E-662D56FCF99A">
+        <File Id="fil728AA6A77BAE81B7BDBB18446A637FFA" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.Plugin.Host.dll" />
+      </Component>
+      <Component Id="cmpC54CAA41E7220E42602024C631EE20EF" Directory="Bin" Guid="7483C763-1862-42DB-9FF4-73BA5A7B30B6">
+        <File Id="fil7F3636DCC1E5C931D2E8981776142A25" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.Plugin.PluginInterface.dll" />
+      </Component>
+      <Component Id="cmp0E8F9F80925BAB913E05EAE312A876DA" Directory="Bin" Guid="18BD74F3-FC8D-46BD-88A4-678C5F268B29">
+        <File Id="fil56115F8D4134844761837560ABAD7BDF" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.Plugin.Tools.dll" />
+      </Component>
+      <Component Id="cmp785B7C285D930671193D893FFDF845B2" Directory="Bin" Guid="7CA71C6D-59F2-40DE-A8CB-2FB1C251F6C8">
+        <File Id="fil61FF3F7BBF9872D9B84056569D2C614E" KeyPath="yes" Source="$(var.PicParamBinDir)\Pic.Plugin.ViewCtrl.dll" />
+      </Component>
+      <Component Id="cmp54FF44B58F688695B1C505193006E005" Directory="Bin" Guid="8B56758B-2319-45CB-AF12-8A54ECD588FD">
+        <File Id="filECB0B3F3C5AE362A9E42F6CAB53E673A" KeyPath="yes" Source="$(var.PicParamBinDir)\PLMPackLib.exe" />
+      </Component>
+      <Component Id="cmpECDAE704EF0AB9862A95DC073D508E2A" Directory="Bin" Guid="CE2A519B-A2EE-45AF-9169-1C94824DF2AD">
+        <File Id="fil6048E809D8960C1514328B157F3E631C" KeyPath="yes" Source="$(var.PicParamBinDir)\PLMPackLib.exe.config" />
+      </Component>
+      <Component Id="cmp64874A6AA44AE8EA5EF21DE166ACA1D3" Directory="Bin" Guid="0E9DE716-19DD-4412-B8F9-BC965BF5E79B">
+        <File Id="fil4CA2823E816DFAAF212EF70D25DFA665" KeyPath="yes" Source="$(var.PicParamBinDir)\RichTextBoxAppender.dll" />
+      </Component>
+      <Component Id="cmp84BB5F6380BAC7A6AA707C764F5B9C97" Directory="Bin" Guid="AAF9E92E-0B58-437A-994C-D695964DFCB5">
+        <File Id="filD6F16025096C7EC5FA37321C27041CD2" KeyPath="yes" Source="$(var.PicParamBinDir)\Sharp3D.Math.dll" />
+      </Component>
+      <Component Id="cmp9A2F27E2D0B34B03EC7A78A0D27EF7C3" Directory="Bin" Guid="560635E5-2D49-42A1-9A63-AA127F5816F1">
+        <File Id="fil38EC41F59AA9B2C05E3318DC8322A959" KeyPath="yes" Source="$(var.PicParamBinDir)\System.Data.SQLite.dll" />
+      </Component>
+      <Component Id="cmp246D2F61AA5ABA2197F1A18C02313299" Directory="Bin" Guid="2F4EDFB2-63D7-4D60-B459-0717ED6ED33D">
+        <File Id="filEFDA531C17E013C62A1FDED93D603781" KeyPath="yes" Source="$(var.PicParamBinDir)\System.Data.SQLite.EF6.dll" />
+      </Component>
+      <Component Id="cmp53F90AEC17E2B6A124E724755D4CFDD7" Directory="Bin" Guid="C56E598A-ECF9-4D2F-ABC0-2B3723CF3751">
+        <File Id="fil235C80FFE9A72D35814C97DA2863612B" KeyPath="yes" Source="$(var.PicParamBinDir)\System.Data.SQLite.Linq.dll" />
+      </Component>
+      <Component Id="cmpB8DA3A56A8A22F7A2D1E6001D2420D80" Directory="Bin" Guid="A8C99BD0-7D2D-4EC0-B5C1-A50968D5C527">
+        <File Id="fil9E96ADF6721B9A75ED97A424A597C970" KeyPath="yes" Source="$(var.PicParamBinDir)\treeDiM.DiecutLib.dll" />
+      </Component>
+      <Component Id="cmp1A951584AFA5C87018BDA8C22ED6301D" Directory="Bin" Guid="73EE87EB-8A0E-4810-BFE7-F871374B6BBA">
+        <File Id="filDBA12CDF2F7470E1E5BA8CD52286B660" KeyPath="yes" Source="$(var.PicParamBinDir)\treeDiM.ThreadCallback.dll" />
+      </Component>
+      <Component Id="cmp9F6510A3916BEB17946C75D07D760B29" Directory="Bin" Guid="07D2FB05-5A3A-4321-990F-8B68368CEAD8">
+        <File Id="fil5E2BD6F94304B2E6036601556CDBA0D0" KeyPath="yes" Source="$(var.PicParamBinDir)\treeDiM.UserControls.dll" />
+      </Component>
+      <Component Id="cmpC84F6623B49D671A2535B33BDD33026B" Directory="Bin" Guid="150E9036-2D71-4DA7-8C93-5995D2AD10E9">
+        <File Id="fil1287F0AF2D5F3C1F7FC2D2676331483F" KeyPath="yes" Source="$(var.PicParamBinDir)\WeifenLuo.WinFormsUI.Docking.dll" />
+      </Component>
+      <Component Id="cmp8F1689F5429A897D9485C05B01B0DA47" Directory="dirAE1C6F65D2C4D2F53041F2CF2D9D86FC" Guid="096CBB42-DF32-41D6-8CE1-534E24F6A41D">
+        <File Id="fil4FF6666A68AA960BEA43367C03BAE034" KeyPath="yes" Source="$(var.PicParamBinDir)\x64\SQLite.Interop.dll" />
+      </Component>
+      <Component Id="cmpDC03C8BB9BD01F44A93389DEF0343614" Directory="dirE59404C5207F63168BB5AE9A44B16FE9" Guid="998AE4E6-8E59-4F13-851C-6A45EC649D65">
+        <File Id="fil81DAE341BF883FCD0FCC9AB19C3442E9" KeyPath="yes" Source="$(var.PicParamBinDir)\x86\SQLite.Interop.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+

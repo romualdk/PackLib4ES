@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- Product manufacturer -->
+  <?define ProductManufacturer = "Edgewood Softwares"?>
+  <!-- Application name -->
+  <?define ApplicationName = "PackLib_ES"?>
+  <!-- Product version -->
+  <?define ProductVersion = "1.0.0.0"?>
+  <!-- Shortcut folder -->
+  <?define ShortcutFolder="Edgewood Softwares"?>
+  <!-- Bin directory -->
+  <?define PicParamBinDir = "D:\GitHub\PackLib4ES\Sources\PicParam\bin\Release"?>
+  <!-- Database directory -->
+  <?define DatabaseDir = "D:\GitHub\PackLib4ES\Sources\Data\Database"?>
+  <!-- Documents directory -->
+  <?define DocumentsDir = "D:\GitHub\PackLib4ES\Sources\Data\Documents"?>
+  <!-- Thumbnails directory -->
+  <?define ThumbnailsDir = "D:\GitHub\PackLib4ES\Sources\Data\Thumbnails"?>
+</Include>
