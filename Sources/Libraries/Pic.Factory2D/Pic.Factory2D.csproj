@@ -82,10 +82,6 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IxMilia.Dxf, Version=0.7.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ThirdPartyLibraries\IxMilia.Dxf.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -195,6 +191,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="IxMilia.Dxf">
+      <Version>0.7.4</Version>
+    </PackageReference>
     <PackageReference Include="log4net">
       <Version>2.0.10</Version>
     </PackageReference>
