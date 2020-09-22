@@ -9,9 +9,6 @@
   </Fragment>
   <Fragment>
     <ComponentGroup Id="PicParamGroup">
-      <Component Id="cmpA6349FDBB7ED10FF3EFB6B5C4052E9AF" Directory="Bin" Guid="BB8C77C4-C56F-45A3-B52E-EF0559BEB188">
-        <File Id="fil662D6331458932F8FECD1EA337A80816" KeyPath="yes" Source="$(var.PicParamBinDir)\app.config" />
-      </Component>
       <Component Id="cmp3D4CF59B22F9238E034E3966027A5B65" Directory="Bin" Guid="2CFA1BCF-E403-4668-A75D-14784726A1A6">
         <File Id="fil19855808C4317C4CCA701BA4530D6302" KeyPath="yes" Source="$(var.PicParamBinDir)\DbLinq.dll" />
       </Component>
@@ -38,9 +35,6 @@
       </Component>
       <Component Id="cmp780943FC28ECED51EAB701053D36CD5D" Directory="Bin" Guid="103EEB4A-C76C-4652-A81B-30B71E4AF49D">
         <File Id="fil26B789A68B3CF6E43CCA499F71DAF83C" KeyPath="yes" Source="$(var.PicParamBinDir)\IxMilia.Dxf.dll" />
-      </Component>
-      <Component Id="cmp2BCF8B7862862DFE06912F20E4439102" Directory="Bin" Guid="475C30E6-85F6-422C-9086-315E641636A1">
-        <File Id="filE240EEFA38D800255F4FBBB29124CA53" KeyPath="yes" Source="$(var.PicParamBinDir)\Localisation_FRA.txt" />
       </Component>
       <Component Id="cmp223F7A40DFEA68AB8E5332C1C201B6DC" Directory="Bin" Guid="F1A086CF-C055-4597-99B5-E123B259E0AE">
         <File Id="fil53216D1158CAC2A725AF4E77F7DA2DDE" KeyPath="yes" Source="$(var.PicParamBinDir)\log4net.dll" />
@@ -80,9 +74,6 @@
       </Component>
       <Component Id="cmp54FF44B58F688695B1C505193006E005" Directory="Bin" Guid="8B56758B-2319-45CB-AF12-8A54ECD588FD">
         <File Id="filECB0B3F3C5AE362A9E42F6CAB53E673A" KeyPath="yes" Source="$(var.PicParamBinDir)\PLMPackLib.exe" />
-      </Component>
-      <Component Id="cmpECDAE704EF0AB9862A95DC073D508E2A" Directory="Bin" Guid="CE2A519B-A2EE-45AF-9169-1C94824DF2AD">
-        <File Id="fil6048E809D8960C1514328B157F3E631C" KeyPath="yes" Source="$(var.PicParamBinDir)\PLMPackLib.exe.config" />
       </Component>
       <Component Id="cmp64874A6AA44AE8EA5EF21DE166ACA1D3" Directory="Bin" Guid="0E9DE716-19DD-4412-B8F9-BC965BF5E79B">
         <File Id="fil4CA2823E816DFAAF212EF70D25DFA665" KeyPath="yes" Source="$(var.PicParamBinDir)\RichTextBoxAppender.dll" />

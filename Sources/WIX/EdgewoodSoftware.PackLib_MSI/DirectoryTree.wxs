@@ -5,12 +5,12 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="INSTALLFOLDER" Name="Edgewood Software">
-          <Directory Id="APPLICATIONROOTDIRECTORY" Name="PackLib">
-            <Directory Id="Bin"/>
-            <Directory Id="Data">
-              <Directory Id="Database"/>
-              <Directory Id="Documents"/>
-              <Directory Id="Thumbnails"/>
+          <Directory Id="APPLICATIONROOTDIRECTORY" Name="Coalesce Parametric Design">
+            <Directory Id="Bin" Name="Bin"/>
+            <Directory Id="Data" Name="Data">
+              <Directory Id="Database" Name="Database"/>
+              <Directory Id="Documents" Name="Documents"/>
+              <Directory Id="Thumbnails" Name="Thumbnails"/>
             </Directory>
           </Directory>
         </Directory>

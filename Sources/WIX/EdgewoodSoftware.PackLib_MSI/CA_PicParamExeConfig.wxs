@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include Config.wxi?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Fragment>
+    <DirectoryRef Id="Bin"/>
+    <Component Id="CA_PLMPackLibExeConfig" Directory="Bin" Guid="CF9F9E4A-7608-45B4-9625-A83789819896">
+      <File Id="PLMPackLib.exe.config" Source="$(var.PicParamBinDir)\PLMPackLib.exe.config" KeyPath="yes" Checksum="yes">
+        <Permission ChangePermission="yes" GenericAll="yes" User="Everyone" TakeOwnership="yes" Write="yes" WriteAttributes="yes" WriteExtendedAttributes="yes" />
+      </File>
+      <util:XmlFile Id="ModifyPLMPackLibExeConfig_Thumbnails" Action="setValue"
+                    File="[Bin]PLMPackLib.exe.config" ElementPath="/configuration/CustomSection/@thumbnailsPath"
+                    Value="[Thumbnails]" />
+      <util:XmlFile Id="ModifyPLMPackLibExeConfig_Database" Action="setValue"
+                    File="[Bin]PLMPackLib.exe.config" ElementPath="/configuration/CustomSection/@databaseFile"
+                    Value="[Database]\PicParam.db" />
+      <util:XmlFile Id="ModifyPLMPackLibExeConfig_EmptyDb" Action="setValue"
+                    File="[Bin]PLMPackLib.exe.config" ElementPath="/configuration/applicationSettings/Pic.DAL.Properties.Settings/setting[\[]@name='EmptyDBFilePath'[\]]/value"
+                    Value="[Database]PicParamEmpty.db" />
+    </Component>
+  </Fragment>
+</Wix>

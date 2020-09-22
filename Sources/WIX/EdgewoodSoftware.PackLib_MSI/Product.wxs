@@ -17,19 +17,30 @@
     <MediaTemplate EmbedCab="yes"/>
     
 
-    <Feature Id="ProductFeature" Title="EdgewoodSoftware.PackLib_MSI" Level="1">
+    <Feature Id="ProductFeature" Title="Coalesce Parametric Design" Level="1">
       <ComponentGroupRef Id="PicParamGroup"/>
       <ComponentGroupRef Id="DatabaseGroup"/>
       <ComponentGroupRef Id="DocumentsGroup"/>
       <ComponentGroupRef Id="ThumbnailsGroup"/>
       <ComponentRef Id="ProgramMenuShortcutComp"/>
       <ComponentRef Id="DesktopShortcutComp"/>
+      <ComponentRef Id="CA_PLMPackLibExeConfig"/>
     </Feature>
 
-    <!-- UI -->
+
+    <!--Installer icon-->
+    <Icon Id="coalesce.ico" SourceFile="coalesce.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="coalesce.ico" />
+    <Property Id="ARPHELPLINK" Value="$(var.CompanyURL)" />
+    <Property Id="ARPURLINFOABOUT" Value="$(var.CompanyURL)" />
+    <!-- User Interface -->
     <UIRef Id="WixUI_InstallDir" />
     <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONROOTDIRECTORY" />
     <WixVariable Id="WixUIBannerBmp" Value=".\Bitmaps\WixBannerBmp.bmp" />
     <WixVariable Id="WixUIDialogBmp" Value=".\Bitmaps\WixDialogBmp.bmp" />
+    <UI>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
+    </UI>
   </Product>
 </Wix>

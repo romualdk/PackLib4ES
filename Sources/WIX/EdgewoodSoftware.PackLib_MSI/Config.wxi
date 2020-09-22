@@ -3,7 +3,9 @@
   <!-- Product manufacturer -->
   <?define ProductManufacturer = "Edgewood Softwares"?>
   <!-- Application name -->
-  <?define ApplicationName = "PackLib_ES"?>
+  <?define ApplicationName = "Coalesce Parametric Design"?>
+  <!---->
+  <?define CompanyURL = "https://www.edgewoodsoftware.com/"?>
   <!-- Product version -->
   <?define ProductVersion = "1.0.0.0"?>
   <!-- Shortcut folder -->

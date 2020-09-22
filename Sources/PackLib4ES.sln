@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pic.DAL.Sqlite", "Pic.DAL\P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pic.DAL.LibraryLoader", "Pic.DAL.LibrairyLoader\Pic.DAL.LibraryLoader.csproj", "{91058110-CAB9-4C53-AD27-536407982F17}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "EdgewoodSoftware.PackLib_MSI", "WIX\EdgewoodSoftware.PackLib_MSI\EdgewoodSoftware.PackLib_MSI.wixproj", "{F3B51AD7-10F2-47D9-9AC6-BE0472F437F9}"
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "CoalesceParametricDesign", "WIX\EdgewoodSoftware.PackLib_MSI\CoalesceParametricDesign.wixproj", "{F3B51AD7-10F2-47D9-9AC6-BE0472F437F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,7 +5,7 @@
     <DirectoryRef Id="ApplicationProgramsFolder">
     <Component Id="ProgramMenuShortcutComp" Guid="{7EEC4FCC-7CD9-453B-B149-C751DCFF1AD7}">
       <Shortcut Id="ProgramMenuShortCut"
-                Name="PackLib"
+                Name="Coalesce Parametric Design"
                 Description="2D package design application"
                 Target="[Bin]PLMPackLib.exe"
                 WorkingDirectory="Bin"/>
@@ -21,7 +21,7 @@
     <DirectoryRef Id="DesktopFolder">
       <Component Id="DesktopShortcutComp" Guid="{E75368FE-2CF8-47AF-8CC1-74F9716F8E3A}">
         <Shortcut Id="DesktopShortCut"
-                  Name="PackLib"
+                  Name="Coalesce Parametric Design"
                   Description="2D package design application"
                   Target="[Bin]PLMPackLib.exe"
                   WorkingDirectory="Bin" />
