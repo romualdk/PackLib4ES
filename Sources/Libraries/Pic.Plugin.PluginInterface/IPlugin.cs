@@ -166,7 +166,6 @@ namespace Pic.Plugin
             get { return _valueMin; }
             set { HasValueMin = true; _valueMin = value; }
         }
-
         public double ValueMax
         {
             get { return _valueMax; }
@@ -190,7 +189,6 @@ namespace Pic.Plugin
 		}
 
         public bool HasValueMin { get; set; }
-
         public bool HasValueMax { get; set; }
 
         public override bool IsValid
@@ -210,10 +208,32 @@ namespace Pic.Plugin
 	}
 
     [Serializable]
+    [XmlInclude(typeof(ParameterAngle))]
+    public class ParameterAngle : ParameterDouble
+    {
+        #region Constructor
+        public ParameterAngle()
+            :base()
+        {
+            ValueMin = -360.0;
+            ValueMax = 360.0;
+        }
+        public ParameterAngle(string name, string description, bool hasValueMin, double valueMin, bool hasValueMax, double valueMax, double valueDefault)
+            : base(name, description, hasValueMin, valueMin, hasValueMax, valueMax, valueDefault)
+        { 
+        
+        }
+        #endregion
+        #region Public properties
+        #endregion
+        #region Override parameter
+        #endregion
+    }
+
+    [Serializable]
     [XmlInclude(typeof(ParameterInt))]
     public class ParameterInt : Parameter
     {
-
         #region Private fields
         private int _valueMin;
         private int _valueMax;
@@ -503,7 +523,14 @@ namespace Pic.Plugin
                 param.ValueMax      = valueMax;
             ParameterList.Add(param);
 		}
-
+        public void AddAngleParameter(string name, string description, double valueDefault)
+        {
+            AddAngleParameter(name, description, valueDefault, true, -360.0, true, 360.0);
+        }
+        public void AddAngleParameter(string name, string description, double valueDefault, bool hasMinValue, double valueMin, bool hasMaxValue, double valueMax)
+        {
+            ParameterList.Add(new ParameterAngle(name, description, hasMinValue, valueMin, hasMaxValue, valueMax, valueDefault));
+        }
         public void AddIntParameter(string name, string description, int valueDefault, bool hasMinValue, int valueMin, bool hasMaxValue, int valueMax)
         {
             ParameterInt param = new ParameterInt
@@ -524,7 +551,6 @@ namespace Pic.Plugin
 		{
             ParameterList.Add(new ParameterBool(name, description, valueDefault));
 		}
-
         public void AddMultiParameter(string name, string description, string[] displayList, string[] valueList, int value)
         {
             ParameterList.Add(new ParameterMulti(name, description, displayList, valueList, value));
@@ -627,28 +653,30 @@ namespace Pic.Plugin
                 throw new ParameterInvalidType(name, "ParameterDouble");
             return param.Value;
         }
-
+        public double GetAngleParameterValue(string name)
+        {
+            if (!(GetParameterByName(name) is ParameterAngle param))
+                throw new ParameterInvalidType(name, "ParameterAngle");
+            return param.Value;
+        }
         public int GetIntParameterValue(string name)
         {
             if (!(GetParameterByName(name) is ParameterInt param))
                 throw new ParameterInvalidType(name, "ParameterInt");
             return param.Value;
         }
-
         public bool GetBoolParameterValue(string name)
         {
             if (!(GetParameterByName(name) is ParameterBool param))
                 throw new ParameterInvalidType(name, "ParameterBool");
             return param.Value;
         }
-
         public int GetMultiParameterValue(string name)
         {
             if (!(GetParameterByName(name) is ParameterMulti param))
                 throw new ParameterInvalidType(name, "ParameterMulti");
             return param.Value;
         }
-
         public string GetMultiParameterValueString(string name)
         {
             if (!(GetParameterByName(name) is ParameterMulti param))
@@ -762,6 +790,14 @@ namespace Pic.Plugin
         {   return CreateDoubleParameter(name, description, valueDefault, true, minValue, false, double.MaxValue);  }
         public ParameterDouble CreateDoubleParameter(string name, string description, double valueDefault, double minValue, double maxValue)
         {   return CreateDoubleParameter(name, description, valueDefault, true, minValue, true, maxValue);  }
+        public ParameterAngle CreateAngleParameter(string name, string description, double valueDefault, bool hasMinValue, double valueMin, bool hasMaxValue, double valueMax)
+        {
+            UpdatedStack.AddAngleParameter(name, description
+                , _stackIn.HasParameter(name) ? _stackIn.GetAngleParameterValue(name): valueDefault
+                , hasMinValue, valueMin, hasMaxValue, valueMax);
+            return UpdatedStack.GetParameterByName(name) as ParameterAngle;
+        }
+
         public ParameterInt CreateIntParameter(string name, string description, int valueDefault, bool hasMinValue, int minValue, bool hasMaxValue, int maxValue)
         {
             UpdatedStack.AddIntParameter(name, description

@@ -1,4 +1,5 @@
 ﻿#region Using directives
+using Pic.Factory2D;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace Pic.Plugin
     public abstract class ProfileLoader
     {
         #region Constructor
-        public ProfileLoader()
+        protected ProfileLoader()
         {
             Reset();
         }
@@ -49,7 +50,7 @@ namespace Pic.Plugin
             if (null == _dictMajoration)
                 _dictMajoration = LoadMajorationList();
             if (param is ParameterDouble parameterDouble)
-                parameterDouble.Value = _dictMajoration[param.Name];
+                parameterDouble.Value = ConvertUnit(_dictMajoration[param.Name]);
         }
 
         public double GetParameterDValue(string name)
@@ -57,12 +58,23 @@ namespace Pic.Plugin
             if (null == _dictMajoration)
                 _dictMajoration = LoadMajorationList();
             if (_dictMajoration.ContainsKey(name))
-                return _dictMajoration[name];
+                return ConvertUnit(_dictMajoration[name]);
             else
                 throw new Exception(string.Format("ProfileLoader : No majoration with name = {0}!", name));
         }
 
         abstract public void SetComponent(Component comp);
+        #endregion
+
+        #region Unit conversion helpers
+        private double ConvertUnit(double dValue)
+        {
+            switch (UnitSystem.Instance.USyst)
+            {
+                case UnitSystem.EUnit.US: return dValue / 25.4;
+                default: return 1.0;
+            }
+        }
         #endregion
 
         #region Abstract method
