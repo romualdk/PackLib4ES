@@ -233,20 +233,19 @@ namespace Pic.Plugin
             // Build
             string applicationDirectory = Path.GetDirectoryName(Application.ExecutablePath);
             // source file
-            List<string> sourceFiles = new List<string>();
-            sourceFiles.Add(sourceFilePath);
+            List<string> sourceFiles = new List<string> { sourceFilePath };
             // embedded resources
-            List<string> embeddedResourcesFiles = new List<string>();
-            embeddedResourcesFiles.Add(pluginCodePath);
-            if (HasThumbnail)
-                embeddedResourcesFiles.Add(bitmapPath);
+            List<string> embeddedResourcesFiles = new List<string> { pluginCodePath };
+            if (HasThumbnail)   embeddedResourcesFiles.Add(bitmapPath);
             // referenced assemblies
-            List<string> referencedAssemblies = new List<string>();
-            referencedAssemblies.Add("System.dll");
-            referencedAssemblies.Add("System.Drawing.dll");
-            referencedAssemblies.Add(Path.Combine(applicationDirectory, "Sharp3D.Math.dll"));
-            referencedAssemblies.Add(Path.Combine(applicationDirectory, "Pic.Factory2D.dll"));
-            referencedAssemblies.Add(Path.Combine(applicationDirectory, "Pic.Plugin.PluginInterface.dll"));
+            List<string> referencedAssemblies = new List<string>
+            {
+                "System.dll",
+                "System.Drawing.dll",
+                Path.Combine(applicationDirectory, "Sharp3D.Math.dll"),
+                Path.Combine(applicationDirectory, "Pic.Factory2D.dll"),
+                Path.Combine(applicationDirectory, "Pic.Plugin.PluginInterface.dll")
+            };
 
             if (null == outputName || 0 == outputName.Length)
                 outputName = Guid.NewGuid().ToString().Replace('-', '_')+ ".dll";
@@ -358,19 +357,23 @@ namespace Pic.Plugin
         {
             // load existing component
             IComponentSearchMethod searchMethod = null;
-            ComponentLoader componentLoader = new ComponentLoader();
-            componentLoader.SearchMethod = searchMethod;
+            ComponentLoader componentLoader = new ComponentLoader
+            {
+                SearchMethod = searchMethod
+            };
             Component comp = componentLoader.LoadComponent(inputPath);
 
             // instantiate PluginGenerator
-            PluginGenerator generator = new PluginGenerator();
-            generator.AssemblyCompany = comp.Author;
-            generator.AssemblyDescription = comp.Description;
-            generator.AssemblyVersion = comp.Version;
-            generator.DrawingName = string.IsNullOrEmpty(name) ? comp.Name : name;
-            generator.DrawingDescription = string.IsNullOrEmpty(description) ? comp.Description : description;
-            generator.Guid = guid != Guid.Empty ? guid : Guid.NewGuid();
-            generator.DrawingCode = comp.SourceCode;
+            PluginGenerator generator = new PluginGenerator
+            {
+                AssemblyCompany = comp.Author,
+                AssemblyDescription = comp.Description,
+                AssemblyVersion = comp.Version,
+                DrawingName = string.IsNullOrEmpty(name) ? comp.Name : name,
+                DrawingDescription = string.IsNullOrEmpty(description) ? comp.Description : description,
+                Guid = guid != Guid.Empty ? guid : Guid.NewGuid(),
+                DrawingCode = comp.SourceCode
+            };
             if (comp.HasEmbeddedThumbnail)
             {
                 // get thumbnail image

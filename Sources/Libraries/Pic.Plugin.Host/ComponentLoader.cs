@@ -60,10 +60,10 @@ namespace Pic.Plugin
             // Preliminary check
             // must exist
             if (!file.Exists)
-                throw new PluginException(string.Format("File {0} does not exist. Cannot load Component.", filePath));
+                throw new PluginException($"File {filePath} does not exist. Cannot load Component.");
             // must be a dll file
             if (!file.Extension.Equals(".dll"))
-                throw new PluginException(string.Format("File {0} is not a dll file. Cannot load Component.", filePath));
+                throw new PluginException($"File {filePath} is not a dll file. Cannot load Component.");
 
             // create a new assembly from the plugin file we're adding...
             return ConvertAssemblyToComponent( Assembly.LoadFrom(filePath) );

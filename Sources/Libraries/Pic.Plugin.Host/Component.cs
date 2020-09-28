@@ -349,12 +349,12 @@ public string LayerName(int i)
             // these parameters are always available but are not shown in the list of parameters in the plugin viewer
             // ep1 and th1 are reserved name
             double defaultThickness = Host.Properties.Settings.Default.Thickness;
-            if (!stackOut.HasParameter("ep1"))
-                stackOut.AddDoubleParameter("ep1", "Epaisseur"
-                    , null != stackIn && stackIn.HasParameter("ep1") ? stackIn.GetDoubleParameterValue("ep1") : defaultThickness);
             if (!stackOut.HasParameter("th1"))
                 stackOut.AddDoubleParameter("th1", "Thickness"
                     , null != stackIn && stackIn.HasParameter("th1") ? stackIn.GetDoubleParameterValue("th1") : defaultThickness);
+            if (!stackOut.HasParameter("ep1"))
+                stackOut.AddDoubleParameter("ep1", "Thickness"
+                    , null != stackIn && stackIn.HasParameter("ep1") ? stackIn.GetDoubleParameterValue("ep1") : defaultThickness);
 
             return ConvertOut(stackOut);
         }
@@ -368,6 +368,8 @@ public string LayerName(int i)
                 {
                     try
                     {
+                        if (p is ParameterAngle pa)
+                            parameters.SetAngleParameter(pa.Name, compSearchMethod.GetAngleParameterDefaultValue(grpId, Guid, pa.Name));
                         if (p is ParameterDouble pd)
                             parameters.SetDoubleParameter(pd.Name, compSearchMethod.GetDoubleParameterDefaultValue(grpId, Guid, pd.Name));
                         if (p is ParameterBool pb)

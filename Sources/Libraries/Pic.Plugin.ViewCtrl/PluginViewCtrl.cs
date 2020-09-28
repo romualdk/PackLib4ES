@@ -286,9 +286,10 @@ namespace Pic.Plugin.ViewCtrl
         {
             get
             {
-                _component.CompUnitSystem = UnitSystem.Instance.USyst;
+                if (null != _component)
+                    _component.CompUnitSystem = UnitSystem.Instance.USyst;
                  return _component;
-           }
+            }
             set
             {
                 // recomputation of parameter list
@@ -297,7 +298,8 @@ namespace Pic.Plugin.ViewCtrl
                 HasDependancies = false;
 
                 _component = value;
-                _component.CompUnitSystem = UnitSystem.Instance.USyst;
+                if (null != _component)
+                    _component.CompUnitSystem = UnitSystem.Instance.USyst;
 
                 // update panel2 controls
                 Panel2.AutoScroll = true;
@@ -889,11 +891,41 @@ namespace Pic.Plugin.ViewCtrl
                 if (_profileLoader != null && _profileLoader.HasParameter(param)
                     || param.IsMajoration)
                     continue;
-
-                if (param.GetType() == typeof(ParameterDouble))
+                if (param is ParameterAngle paramAngle)
                 {
-                    ParameterDouble paramDouble = param as ParameterDouble;
-
+                    Panel2.Controls.Add(
+                        new Label()
+                        { 
+                            Text = Translate(paramAngle.Description) + " (" + paramAngle.Name + ")",
+                            Location = new Point(lblX + param.IndentValue, posY),
+                            Size = lblSize,
+                            TabIndex = ++tabIndex                        
+                        }
+                        );
+                    NumericUpDown nud = new NumericUpDown
+                    {
+                        Name = "nudAngle" + paramAngle.Name,
+                        Minimum = (decimal)paramAngle.ValueMin,
+                        Maximum = (decimal)paramAngle.ValueMax,
+                        DecimalPlaces = 2,
+                        ThousandsSeparator = false,
+                        Value = (decimal)paramAngle.Value,
+                        Location = new Point(nudX + param.IndentValue, posY),
+                        Size = nudSize,
+                        UpDownAlign = LeftRightAlignment.Right,
+                        TabIndex = ++tabIndex
+                    };
+                    nud.ValueChanged += new EventHandler(ParameterChanged);
+                    nud.LostFocus += new EventHandler(OnNudLostFocus);
+                    nud.GotFocus += new EventHandler(OnNudGotFocus);
+                    nud.Click += new EventHandler(OnNudGotFocus);
+                    if (null != timer)
+                        nud.MouseEnter += new EventHandler(OnNudMouseEnter);
+                    
+                    Panel2.Controls.Add(nud);
+                }
+                else if (param is ParameterDouble paramDouble)
+                {
                     // do not show special parameters
                     if (string.Equals(paramDouble.Name, "ep1") || string.Equals(paramDouble.Name, "th1"))
                         continue;
@@ -928,10 +960,8 @@ namespace Pic.Plugin.ViewCtrl
                     nud.TabIndex = ++tabIndex;
                     Panel2.Controls.Add(nud);
                 }
-                else if (param.GetType() == typeof(ParameterInt))
+                else if (param is ParameterInt paramInt)
                 {
-                    ParameterInt paramInt = param as ParameterInt;
-
                     Panel2.Controls.Add(
                         new Label
                         {
@@ -958,10 +988,8 @@ namespace Pic.Plugin.ViewCtrl
                     nud.TabIndex = ++tabIndex;
                     Panel2.Controls.Add(nud);
                 }
-                else if (param.GetType() == typeof(ParameterBool))
+                else if (param is ParameterBool paramBool)
                 {
-                    ParameterBool paramBool = param as ParameterBool;
-
                     CheckBox chkb = new CheckBox
                     {
                         Name = "chkb" + paramBool.Name,
@@ -1123,26 +1151,31 @@ namespace Pic.Plugin.ViewCtrl
                     if (nud.Name.Equals("nudThickness"))
                     {
                         _thickness = Convert.ToDouble(nud.Value);
-                        if (stack.HasParameter("ep1"))  stack.SetDoubleParameter("ep1", _thickness);
-                        if (stack.HasParameter("th1"))  stack.SetDoubleParameter("th1", _thickness);
+                        if (stack.HasParameter("ep1")) stack.SetDoubleParameter("ep1", _thickness);
+                        if (stack.HasParameter("th1")) stack.SetDoubleParameter("th1", _thickness);
                     }
                     else
                         foreach (Parameter param in stack.ParameterList)
                         {
                             if (nud.Name.Equals("nud" + param.Name))
                             {
-                                if (param.GetType() == typeof(ParameterDouble))
+                                if (param is ParameterDouble paramDouble)
                                 {
-                                    ParameterDouble paramDouble = param as ParameterDouble;
-                                    try {   paramDouble.Value = Convert.ToDouble(nud.Value);    }
-                                    catch (Exception ex)
-                                    {   log.Error(ex.ToString());  }
+                                    try { paramDouble.Value = Convert.ToDouble(nud.Value); }
+                                    catch (Exception ex) { log.Error(ex.ToString()); }
                                 }
-                                else if (param.GetType() == typeof(ParameterInt))
+                                else if (param is ParameterInt paramInt)
                                 {
-                                    ParameterInt paramInt = param as ParameterInt;
                                     try { paramInt.Value = Convert.ToInt32(nud.Value); }
-                                    catch (Exception /*ex*/) { }
+                                    catch (Exception ex) { log.Error(ex.ToString()); }
+                                }
+                            }
+                            else if (nud.Name.Equals("nudAngle" + param.Name))
+                            {
+                                if (param is ParameterAngle paramAngle)
+                                {
+                                    try { paramAngle.Value = Convert.ToDouble(nud.Value); }
+                                    catch (Exception ex) { log.Error(ex.ToString()); }
                                 }
                             }
                         }
@@ -1262,7 +1295,7 @@ namespace Pic.Plugin.ViewCtrl
             try
             {
                SetParametersDirty();
-                if (o is NumericUpDown nud)
+                if (o is NumericUpDown nud && UnitSystem.Instance.USyst == UnitSystem.EUnit.METRIC)
                     nud.Increment = (nud.Value < 10.0m) ? 0.5m : 1.0m;
                 if (null != _picGraphics)
                     _picGraphics.DrawingBox = BoundingBox;
@@ -1273,19 +1306,16 @@ namespace Pic.Plugin.ViewCtrl
                 log.Error(ex.Message);
             }
         }
-
         protected void ParameterChanged_WithRecreate(object o, EventArgs e)
         {
             try
             {
                 SetParametersDirty();
 
-                if (o is NumericUpDown nud)
+                if (o is NumericUpDown nud && UnitSystem.Instance.USyst == UnitSystem.EUnit.METRIC)
                     nud.Increment = (nud.Value < 10.0m) ? 0.5m : 1.0m;
-
                 // recreate plugin controls
                 CreatePluginControls();
-
                 if (null != _picGraphics)
                     _picGraphics.DrawingBox = BoundingBox;
                 Redraw(true);
@@ -1295,7 +1325,6 @@ namespace Pic.Plugin.ViewCtrl
                 log.Error(ex.Message);
             }
         }
-
         protected void OnNudLostFocus(object sender, EventArgs e) => Redraw(true);
         void OnBnEditMajorations(object sender, EventArgs e)
         {
@@ -1344,7 +1373,11 @@ namespace Pic.Plugin.ViewCtrl
         private void OnNudMouseEnter(object sender, EventArgs e)
         {
             if (sender is NumericUpDown nudControl && null != timer)
+            {
+                if (nudControl.Name.StartsWith("nudAngle"))
+                    return;
                 AnimateParameterName(nudControl.Name.Substring(3));
+            }
         }
         public void AnimateParameterName(string parameterName)
         {
@@ -1364,10 +1397,12 @@ namespace Pic.Plugin.ViewCtrl
             {
                 double parameterValue = 0;
                 int iStep = _timerStep < _noStepsTimer / 2 ? _timerStep : _noStepsTimer - 1 - _timerStep;
+                double unitMultiplicator = UnitSystem.Instance.USyst == UnitSystem.EUnit.US ? 1.0 / 25.4 : 1.0;
+
                 if (_parameterInitialValue > 10)
-                    parameterValue = _parameterInitialValue + iStep * 0.1 * _parameterInitialValue;
+                    parameterValue = _parameterInitialValue + iStep * 0.1 *unitMultiplicator *  _parameterInitialValue;
                 else if (_parameterInitialValue <= 10)
-                    parameterValue = _parameterInitialValue + iStep * 2;
+                    parameterValue = _parameterInitialValue + iStep * 1 * unitMultiplicator;
 
                 tempParameterStack.SetDoubleParameter(_parameterName, parameterValue);
                 _computeBbox = false;

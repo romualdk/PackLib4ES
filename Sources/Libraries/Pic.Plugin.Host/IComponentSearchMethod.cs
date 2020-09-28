@@ -29,6 +29,7 @@ namespace Pic.Plugin
         /// <summary>
         /// get parameter default value
         /// </summary>
+        double GetAngleParameterDefaultValue(string grpId, Guid g, string name);
         double GetDoubleParameterDefaultValue(string grpId, Guid g, string name);
         int GetIntParameterDefaultValue(string grpId, Guid g, string name);
         bool GetBoolParameterDefaultValue(string grpId, Guid g, string name);
@@ -67,6 +68,11 @@ namespace Pic.Plugin
                     return File.ReadAllBytes(fileInfo.FullName);
             }
             throw new PluginException($"Failed to load Component with Guid = {g.ToString()} in directory {DirectoryPath}");
+        }
+        public double GetAngleParameterDefaultValue(string grpId, Guid g, string name)
+        {
+            Component comp = GetComponentFromGuid(g);
+            return comp.BuildParameterStack(null).GetAngleParameterValue(name);
         }
         public double GetDoubleParameterDefaultValue(string grpId, Guid g, string name)
         {

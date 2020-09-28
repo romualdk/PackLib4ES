@@ -14,6 +14,7 @@ using Sharp3D.Math.Core;
 
 using Pic.Factory2D;
 using Pic.Factory2D.Control;
+using System.Security.Permissions;
 #endregion
 
 namespace Pic.Plugin.ViewCtrl
@@ -82,7 +83,11 @@ namespace Pic.Plugin.ViewCtrl
         private void OnNudMouseEnter(object sender, EventArgs e)
         {
             if (sender is NumericUpDown nudControl && null != timer)
+            {
+                if (nudControl.Name.StartsWith("nudAngle"))
+                    return;
                 AnimateParameterName(nudControl.Name.Substring(3));
+            }
         }
         public void AnimateParameterName(string parameterName)
         {
@@ -102,10 +107,13 @@ namespace Pic.Plugin.ViewCtrl
             {
                 double parameterValue = 0;
                 int iStep = _timerStep < NoStepsTimer / 2 ? _timerStep : NoStepsTimer - 1 - _timerStep;
+                double unitMultiplicator = UnitSystem.Instance.USyst == UnitSystem.EUnit.US ? 1.0 / 25.4 : 1.0; 
+
+
                 if (_parameterInitialValue > 10)
-                    parameterValue = _parameterInitialValue + iStep * 0.1 * _parameterInitialValue;
+                    parameterValue = _parameterInitialValue + iStep * 0.1 * unitMultiplicator * _parameterInitialValue;
                 else if (_parameterInitialValue <= 10)
-                    parameterValue = _parameterInitialValue + iStep * 2;
+                    parameterValue = _parameterInitialValue + iStep * 1 * unitMultiplicator;
 
                 tempParameterStack.SetDoubleParameter(_parameterName, parameterValue);
                 Redraw(false);
@@ -334,7 +342,7 @@ namespace Pic.Plugin.ViewCtrl
             try
             {
                 SetParametersDirty();
-                if (o is NumericUpDown nud)
+                if (o is NumericUpDown nud && UnitSystem.Instance.USyst == UnitSystem.EUnit.METRIC)
                     nud.Increment = (nud.Value < 10.0m) ? 0.5m : 1.0m;
                 if (null != _picGraphics)
                     _picGraphics.DrawingBox = BoundingBox;
@@ -350,7 +358,7 @@ namespace Pic.Plugin.ViewCtrl
             try
             {
                 SetParametersDirty();
-                if (o is NumericUpDown nud)
+                if (o is NumericUpDown nud && UnitSystem.Instance.USyst == UnitSystem.EUnit.METRIC)
                     nud.Increment = (nud.Value < 10.0m) ? 0.5m : 1.0m;
                 // recreate plugin controls
                 CreatePluginControls();
@@ -693,18 +701,23 @@ namespace Pic.Plugin.ViewCtrl
                         {
                             if (nud.Name.Equals("nud" + param.Name))
                             {
-                                if (param.GetType() == typeof(ParameterDouble))
+                                if (param is ParameterDouble paramDouble)
                                 {
-                                    ParameterDouble paramDouble = param as ParameterDouble;
                                     try { paramDouble.Value = Convert.ToDouble(nud.Value); }
-                                    catch (Exception ex)
-                                    { log.Error(ex.ToString()); }
+                                    catch (Exception ex) { log.Error(ex.ToString()); }
                                 }
-                                else if (param.GetType() == typeof(ParameterInt))
+                                else if (param is ParameterInt paramInt)
                                 {
-                                    ParameterInt paramInt = param as ParameterInt;
                                     try { paramInt.Value = Convert.ToInt32(nud.Value); }
-                                    catch (Exception /*ex*/) { }
+                                    catch (Exception ex) { log.Error(ex.ToString()); }
+                                }
+                            }
+                            else if (nud.Name.Equals("nudAngle" + param.Name))
+                            {
+                                if (param is ParameterAngle paramAngle)
+                                {
+                                    try { paramAngle.Value = Convert.ToDouble(nud.Value); }
+                                    catch (Exception ex) { log.Error(ex.ToString()); }
                                 }
                             }
                         }
@@ -850,34 +863,31 @@ namespace Pic.Plugin.ViewCtrl
                     || param.IsMajoration)
                     continue;
 
-                if (param.GetType() == typeof(ParameterDouble))
+                if (param is ParameterAngle paramAngle)
                 {
-                    ParameterDouble paramDouble = param as ParameterDouble;
-
-                    // do not show special parameters
-                    if (string.Equals(paramDouble.Name, "ep1") || string.Equals(paramDouble.Name, "th1"))
-                        continue;
-
-                    Label lbl = new Label
-                    {
-                        Text = Translate(paramDouble.Description) + " (" + paramDouble.Name + ")",
-                        Location = new Point(lblX + param.IndentValue, posY),
-                        Size = lblSize,
-                        TabIndex = ++tabIndex
-                    };
-                    panel2.Controls.Add(lbl);
+                    panel2.Controls.Add(
+                        new Label
+                        {
+                            Text = Translate(paramAngle.Description) + " (" + paramAngle.Name + ")",
+                            Location = new Point(lblX + param.IndentValue, posY),
+                            Size = lblSize,
+                            TabIndex = ++tabIndex
+                        }
+                    );
 
                     NumericUpDown nud = new NumericUpDown
                     {
-                        Name = "nud" + paramDouble.Name,
-                        Minimum = paramDouble.HasValueMin ? (decimal)paramDouble.ValueMin : 0,
-                        Maximum = paramDouble.HasValueMax ? (decimal)paramDouble.ValueMax : 10000,
-                        DecimalPlaces = 2,
+                        Name = "nudAngle" + paramAngle.Name,
+                        Minimum = (decimal)paramAngle.ValueMin,
+                        Maximum = (decimal)paramAngle.ValueMax,
+                        DecimalPlaces = 1,
+                        Increment = 1,
                         ThousandsSeparator = false,
-                        Value = (decimal)paramDouble.Value,
+                        Value = (decimal)paramAngle.Value,
                         Location = new Point(nudX + param.IndentValue, posY),
                         Size = nudSize,
-                        UpDownAlign = LeftRightAlignment.Right
+                        UpDownAlign = LeftRightAlignment.Right,
+                        TabIndex = ++tabIndex
                     };
                     nud.ValueChanged += new EventHandler(ParameterChanged);
                     nud.LostFocus += new EventHandler(OnNudLostFocus);
@@ -885,7 +895,44 @@ namespace Pic.Plugin.ViewCtrl
                     nud.Click += new EventHandler(OnNudGotFocus);
                     if (null != timer)
                         nud.MouseEnter += new EventHandler(OnNudMouseEnter);
-                    nud.TabIndex = ++tabIndex;
+                    panel2.Controls.Add(nud);
+                }
+                else if (param is ParameterDouble paramDouble)
+                {
+                    // do not show special parameters
+                    if (string.Equals(paramDouble.Name, "ep1") || string.Equals(paramDouble.Name, "th1"))
+                        continue;
+
+                    panel2.Controls.Add(
+                        new Label
+                        {
+                            Text = Translate(paramDouble.Description) + " (" + paramDouble.Name + ")",
+                            Location = new Point(lblX + param.IndentValue, posY),
+                            Size = lblSize,
+                            TabIndex = ++tabIndex
+                        }
+                    );
+
+                    NumericUpDown nud = new NumericUpDown
+                    {
+                        Name = "nud" + paramDouble.Name,
+                        Minimum = paramDouble.HasValueMin ? (decimal)paramDouble.ValueMin : 0,
+                        Maximum = paramDouble.HasValueMax ? (decimal)paramDouble.ValueMax : 10000,
+                        DecimalPlaces = UnitSystem.Instance.USyst == UnitSystem.EUnit.US ? 2 : 1,
+                        Increment = UnitSystem.Instance.USyst == UnitSystem.EUnit.US ? 0.1m : 1.0m,
+                        ThousandsSeparator = false,
+                        Value = (decimal)paramDouble.Value,
+                        Location = new Point(nudX + param.IndentValue, posY),
+                        Size = nudSize,
+                        UpDownAlign = LeftRightAlignment.Right,
+                        TabIndex = ++tabIndex
+                    };
+                    nud.ValueChanged += new EventHandler(ParameterChanged);
+                    nud.LostFocus += new EventHandler(OnNudLostFocus);
+                    nud.GotFocus += new EventHandler(OnNudGotFocus);
+                    nud.Click += new EventHandler(OnNudGotFocus);
+                    if (null != timer)
+                        nud.MouseEnter += new EventHandler(OnNudMouseEnter);
                     panel2.Controls.Add(nud);
                 }
                 else if (param.GetType() == typeof(ParameterInt))
@@ -974,9 +1021,9 @@ namespace Pic.Plugin.ViewCtrl
             _computeBbox = true;
             splitContHorizLeft.Panel1.Refresh();
         }
-#endregion
+        #endregion
 
-#region Parameter translation
+        #region Parameter translation
         public ILocalizer Localizer { get; set; } = null;
         private string Translate(string term)
         {
@@ -997,18 +1044,18 @@ namespace Pic.Plugin.ViewCtrl
                 return sArray.ToArray();
             }
         }
-#endregion
+        #endregion
 
-#region Event
+        #region Event
         public delegate void DependancyStatusChangedHandler(Control pluginViewer, bool hasDependancy);
         public event DependancyStatusChangedHandler DependancyStatusChanged;
         [Category("Configuration"), Browsable(true), Description("Event raised by user click on Close button")]
         public event EventHandler CloseClicked;
         [Category("Configuration"), Browsable(true), Description("Event raised by user click on Validate button")]
         public event EventHandler ValidateClicked;
-#endregion
+        #endregion
 
-#region Data members
+        #region Data members
         // log4net
         private static readonly ILog log = LogManager.GetLogger(typeof(PluginViewUCtrl));
         // other
@@ -1035,6 +1082,6 @@ namespace Pic.Plugin.ViewCtrl
         public Box2D Box { get; set; }
 
         protected double _parameterInitialValue = 0.0;
-#endregion
+        #endregion
     }
 }

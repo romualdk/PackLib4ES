@@ -50,6 +50,7 @@ namespace PicParam
         public int GetIntParameterDefaultValue(Guid guid, string name) => 0;
         public bool GetBoolParameterDefaultValue(Guid guid, string name) => true;
         public int GetMultiParameterDefaultValue(Guid guid, string name) => 0;
+        public double GetAngleParameterDefaultValue(string grpId, Guid guid, string name) => GetDoubleParameterDefaultValue(guid, name);
         public double GetDoubleParameterDefaultValue(string grpId, Guid guid, string name) => GetDoubleParameterDefaultValue(guid, name);
         public int GetIntParameterDefaultValue(string grpId, Guid guid, string name) => GetIntParameterDefaultValue(guid, name);
         public bool GetBoolParameterDefaultValue(string grpId, Guid guid, string name) => GetBoolParameterDefaultValue(guid, name);

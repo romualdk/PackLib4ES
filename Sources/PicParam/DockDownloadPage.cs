@@ -104,7 +104,6 @@ namespace PicParam
             {
                 _log.Error(ex.Message);
             }
-
             base.OnLoad(e);
         }
 
