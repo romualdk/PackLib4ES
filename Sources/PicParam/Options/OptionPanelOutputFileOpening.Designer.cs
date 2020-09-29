@@ -74,14 +74,14 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CategoryPath = "Paramètres\\Export des fichiers";
+            this.CategoryPath = "Parameters\\File export";
             this.Controls.Add(this.fileSelectOutputCF2);
             this.Controls.Add(this.checkBoxAppCF2);
             this.Controls.Add(this.fileSelectOutputAI);
             this.Controls.Add(this.checkBoxAppAI);
             this.Controls.Add(this.fileSelectOutputDXF);
             this.Controls.Add(this.checkBoxAppDXF);
-            this.DisplayName = "Export des fichiers";
+            this.DisplayName = "File export";
             this.Name = "OptionPanelOutputFileOpening";
             this.Load += new System.EventHandler(this.OptionPanelOutputFileOpening_Load);
             this.ResumeLayout(false);

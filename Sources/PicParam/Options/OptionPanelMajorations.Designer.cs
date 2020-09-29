@@ -79,7 +79,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CategoryPath = "Paramètres\\Majorations";
+            this.CategoryPath = "Parameters\\Majorations";
             this.Controls.Add(this.gbRounding);
             this.DisplayName = "Majorations";
             this.Name = "OptionPanelMajorations";

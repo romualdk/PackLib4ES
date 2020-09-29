@@ -12,7 +12,7 @@ namespace PicParam.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -222,24 +222,6 @@ namespace PicParam.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.treedim.com/packlib/tutorials")]
-        public string HelpUrl {
-            get {
-                return ((string)(this["HelpUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.plmpack.com/packlib_start_page.htm")]
-        public string UrlStartPage {
-            get {
-                return ((string)(this["UrlStartPage"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -254,13 +236,103 @@ namespace PicParam.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.plmpack.com/packlib/Docs/PackLiB_programing.htm")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.edgewoodsoftware.com/")]
         public string DevelopperHelpUrl {
             get {
                 return ((string)(this["DevelopperHelpUrl"]));
             }
             set {
                 this["DevelopperHelpUrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HelpUrl {
+            get {
+                return ((string)(this["HelpUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.edgewoodsoftware.com/")]
+        public string UrlStartPage {
+            get {
+                return ((string)(this["UrlStartPage"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowButtonLayout {
+            get {
+                return ((bool)(this["ShowButtonLayout"]));
+            }
+            set {
+                this["ShowButtonLayout"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowButtonEditCode {
+            get {
+                return ((bool)(this["ShowButtonEditCode"]));
+            }
+            set {
+                this["ShowButtonEditCode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowButtonPalletization {
+            get {
+                return ((bool)(this["ShowButtonPalletization"]));
+            }
+            set {
+                this["ShowButtonPalletization"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowButtonNonDXFExports {
+            get {
+                return ((bool)(this["ShowButtonNonDXFExports"]));
+            }
+            set {
+                this["ShowButtonNonDXFExports"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowCotationsDuringExports {
+            get {
+                return ((bool)(this["ShowCotationsDuringExports"]));
+            }
+            set {
+                this["ShowCotationsDuringExports"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowButtonHelp {
+            get {
+                return ((bool)(this["ShowButtonHelp"]));
+            }
+            set {
+                this["ShowButtonHelp"] = value;
             }
         }
     }

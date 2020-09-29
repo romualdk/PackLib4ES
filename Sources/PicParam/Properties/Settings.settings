@@ -53,17 +53,35 @@
     <Setting Name="TSButtonAvailableSUMMA" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="HelpUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.treedim.com/packlib/tutorials</Value>
-    </Setting>
-    <Setting Name="UrlStartPage" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.plmpack.com/packlib_start_page.htm</Value>
-    </Setting>
     <Setting Name="ShowLogConsole" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="DevelopperHelpUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://www.plmpack.com/packlib/Docs/PackLiB_programing.htm</Value>
+      <Value Profile="(Default)">https://www.edgewoodsoftware.com/</Value>
+    </Setting>
+    <Setting Name="HelpUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UrlStartPage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.edgewoodsoftware.com/</Value>
+    </Setting>
+    <Setting Name="ShowButtonLayout" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowButtonEditCode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowButtonPalletization" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowButtonNonDXFExports" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowCotationsDuringExports" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowButtonHelp" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

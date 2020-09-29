@@ -49,10 +49,10 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CategoryPath = "Paramètres\\Fenêtres";
+            this.CategoryPath = "Parameters\\Windows";
             this.Controls.Add(this.checkBoxCenteredTitleBar);
             this.Controls.Add(this.checkBoxMaximized);
-            this.DisplayName = "Fenêtres";
+            this.DisplayName = "Windows";
             this.Name = "OptionPanelWindow";
             this.Load += new System.EventHandler(this.OptionPanelWindow_Load);
             this.ResumeLayout(false);

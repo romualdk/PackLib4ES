@@ -35,9 +35,9 @@
             // 
             // cbLanguages
             // 
-            resources.ApplyResources(this.cbLanguages, "cbLanguages");
             this.cbLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguages.FormattingEnabled = true;
+            resources.ApplyResources(this.cbLanguages, "cbLanguages");
             this.cbLanguages.Name = "cbLanguages";
             this.cbLanguages.SelectedIndexChanged += new System.EventHandler(this.onComboSelectionChanged);
             // 
@@ -50,10 +50,10 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CategoryPath = "Paramètres\\\\Culture";
+            this.CategoryPath = "Parameters\\Units & Language";
             this.Controls.Add(this.cbLanguages);
             this.Controls.Add(this.lbLanguage);
-            this.DisplayName = "Culture & langue";
+            this.DisplayName = "Units & language";
             this.Name = "OptionPanelCulture";
             this.ResumeLayout(false);
             this.PerformLayout();

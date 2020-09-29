@@ -61,11 +61,11 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CategoryPath = "Paramètres\\Composants paramétriques";
+            this.CategoryPath = "Parameters\\Parametric components";
             this.Controls.Add(this.nudNoStepsAnimation);
             this.Controls.Add(this.lbNoStepsAnimation);
             this.Controls.Add(this.checkBoxAllowParameterAnimation);
-            this.DisplayName = "Affichage composants paramétriques";
+            this.DisplayName = "Display of parametric components";
             this.Name = "OptionPanelComponentViewer";
             this.Load += new System.EventHandler(this.OptionPanelComponentViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudNoStepsAnimation)).EndInit();

@@ -59,11 +59,11 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CategoryPath = "Paramètres\\Débogage";
+            this.CategoryPath = "Parameters\\Debugging";
             this.Controls.Add(this.bnOpenConfigDirectory);
             this.Controls.Add(this.bnUpdateLocalisationFile);
             this.Controls.Add(this.chkbShowLogConsole);
-            this.DisplayName = "Débogage";
+            this.DisplayName = "Debugging";
             this.Name = "OptionPanelDebug";
             this.ResumeLayout(false);
             this.PerformLayout();
