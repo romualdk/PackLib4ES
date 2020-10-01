@@ -1,17 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<?include Config.wxi?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Fragment>
-    <DirectoryRef Id="Database" />
-  </Fragment>
-  <Fragment>
-    <ComponentGroup Id="DatabaseGroup">
-      <Component Id="cmp4FD12AAF92587B960589FC516220BF36" Directory="Database" Guid="DAFA2AEF-3F3A-4A8A-ABF2-F8BBEDFA1F0D">
-        <File Id="fil60B91915F0F5103DC91FC39BDA7F826C" KeyPath="yes" Source="$(var.DatabaseDir)\PicParam.db" />
-      </Component>
-      <Component Id="cmpC122884FE1FC208734839B045C259AC5" Directory="Database" Guid="8B935808-3846-49CC-A5BE-F4AAC9EDC336">
-        <File Id="fil59A8B21AB07F03125AD990D02D59EBC4" KeyPath="yes" Source="$(var.DatabaseDir)\PicParamEmpty.db" />
-      </Component>
-    </ComponentGroup>
-  </Fragment>
-</Wix>
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<?include Config.wxi?><Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"> 
+<Fragment> 
+<DirectoryRef Id="Database" /> 
+</Fragment> 
+<Fragment> 
+<ComponentGroup Id="DatabaseGroup"> 
+<Component Id="cmp4FD12AAF92587B960589FC516220BF36" Directory="Database" Guid="8B6F6F37-346F-4E9F-BE3B-664C4BF1A496"> 
+<File Id="fil60B91915F0F5103DC91FC39BDA7F826C" KeyPath="yes" Source="$(var.DatabaseDir)\PicParam.db" /> 
+</Component> 
+<Component Id="cmpC122884FE1FC208734839B045C259AC5" Directory="Database" Guid="FA52B0E6-DB6A-42A1-96D8-DA730F3CB757"> 
+<File Id="fil59A8B21AB07F03125AD990D02D59EBC4" KeyPath="yes" Source="$(var.DatabaseDir)\PicParamEmpty.db" /> 
+</Component> 
+</ComponentGroup> 
+</Fragment> 
+</Wix> 
