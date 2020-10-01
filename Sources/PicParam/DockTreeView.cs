@@ -185,8 +185,7 @@ namespace PicParam
             if (!pluginViewCtrl.Visible || null == comp || !comp.IsSupportingAutomaticFolding)
                 return;
             // get documents at the same lavel
-            NodeTag nodeTag = treeView.SelectedNode.Tag as NodeTag;
-            if (null == nodeTag) return;
+            if (!(treeView.SelectedNode.Tag is NodeTag nodeTag)) return;
             PPDataContext db = new PPDataContext();
             Pic.DAL.SQLite.TreeNode treeNode = Pic.DAL.SQLite.TreeNode.GetById(db, nodeTag.TreeNode);
             List<Document> des3Docs = treeNode.GetBrothersWithExtension(db, "des3");
@@ -196,11 +195,13 @@ namespace PicParam
             foreach (Document d in des3Docs)
                 filePathes.Add(d.File.Path(db));
 
-            SaveFileDialog fd = new SaveFileDialog();
-            fd.Filter = "Picador 3D files (*.des3)|*.des3|All files (*.*)|*.*";
-            fd.FilterIndex = 0;
-            fd.DefaultExt = "des3";
-            fd.FileName = treeNode.Name + ".des3";
+            SaveFileDialog fd = new SaveFileDialog
+            {
+                Filter = "Picador 3D files (*.des3)|*.des3|All files (*.*)|*.*",
+                FilterIndex = 0,
+                DefaultExt = "des3",
+                FileName = treeNode.Name + ".des3"
+            };
 
             if (DialogResult.OK == fd.ShowDialog())
             {
@@ -474,19 +475,30 @@ namespace PicParam
                 // #### actually exported file from _pluginViewCtrl or _factoryViewCtrl
                 if (pluginViewCtrl.Visible || factoryViewCtrl.Visible)
                 {
-                    FormExportFile form = new FormExportFile { FileName = DocumentName };
-                    if (DialogResult.OK == form.ShowDialog())
+                    string fileName = string.Empty;
+                    if (treeView.SelectedNode.Tag is NodeTag nodeTag)
+                        fileName = nodeTag.Name;
+
+                    SaveFileDialog fd = new SaveFileDialog()
+                    {
+                        FileName = fileName,
+                        Filter = "Autocad dxf|*.dxf|All Files|*.*",
+                        FilterIndex = 0,
+                        DefaultExt = "dxf"
+                    };
+                    string fileExtension = "dxf";
+                    if (DialogResult.OK == fd.ShowDialog())
                     {
                         if (pluginViewCtrl.Visible)
-                            pluginViewCtrl.WriteExportFile(form.FilePath, form.ActualFileExtension);
+                            pluginViewCtrl.WriteExportFile(fd.FileName, fileExtension);
                         else if (factoryViewCtrl.Visible)
                         {
                             // at first, attempt to copy original file
                             // rather than exporting _factoryViewCtrl content
-                            if ("des" == form.ActualFileExtension && System.IO.File.Exists(DocumentPath))
-                                System.IO.File.Copy(DocumentPath, form.FilePath, true);
+                            if ("des" == fileExtension && System.IO.File.Exists(DocumentPath))
+                                System.IO.File.Copy(DocumentPath, fd.FileName, true);
                             else
-                                factoryViewCtrl.WriteExportFile(form.FilePath, form.ActualFileExtension);
+                                factoryViewCtrl.WriteExportFile(fd.FileName, fileExtension);
                         }
                         else if (webBrowser4PDF.Visible)
                         {
@@ -494,17 +506,17 @@ namespace PicParam
                             {
                             }
                         }
-                        if (form.OpenFile)
+                        if (false)
                         {
                             using (Process proc = new Process())
                             {
-                                if ("des" == form.ActualFileExtension
-                                    || "dxf" == form.ActualFileExtension
-                                    || "ai" == form.ActualFileExtension
-                                    || "cf2" == form.ActualFileExtension)
+                                if ("des" == fileExtension
+                                    || "dxf" == fileExtension
+                                    || "ai" == fileExtension
+                                    || "cf2" == fileExtension)
                                 {
                                     string applicationPath = string.Empty;
-                                    switch (form.ActualFileExtension)
+                                    switch (fileExtension)
                                     {
                                         case "des": applicationPath = Pic.Factory2D.Control.Properties.Settings.Default.FileOutputAppDES; break;
                                         case "dxf": applicationPath = Pic.Factory2D.Control.Properties.Settings.Default.FileOutputAppDXF; break;
@@ -515,11 +527,11 @@ namespace PicParam
                                     if (string.IsNullOrEmpty(applicationPath) || !System.IO.File.Exists(applicationPath))
                                         return;
                                     proc.StartInfo.FileName = applicationPath;
-                                    proc.StartInfo.Arguments = "\"" + form.FilePath + "\"";
+                                    proc.StartInfo.Arguments = "\"" + fd.FileName + "\"";
                                 }
-                                else if ("pdf" == form.ActualFileExtension)
+                                else if ("pdf" == fileExtension)
                                 {
-                                    proc.StartInfo.FileName = form.FilePath;
+                                    proc.StartInfo.FileName = fd.FileName;
                                     // actually using shell execute
                                     proc.StartInfo.UseShellExecute = true;
                                     proc.StartInfo.Verb = "open";
@@ -558,7 +570,7 @@ namespace PicParam
             }
             catch (Exception ex)
             {
-                Debug.Fail(ex.ToString());
+                Debug.Fail(ex.Message);
                 _log.Error(ex.ToString());
             }
         }

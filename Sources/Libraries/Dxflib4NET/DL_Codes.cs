@@ -16,6 +16,7 @@
         public const dxfversion VER_2000 = dxfversion.AC1015;
         public const dxfversion VER_2002 = dxfversion.AC1015;
 
+
         // Start and endPoints of a line
         public const int LINE_START_CODE    = 10;
         public const int LINE_END_CODE      = 11;
@@ -56,7 +57,7 @@
         /// </summary>
         public enum dxfversion
         {
-            AC1009, AC1012, AC1014, AC1015
+            AC1009, AC1012, AC1014, AC1015, AC1027
         };
         #endregion
     }

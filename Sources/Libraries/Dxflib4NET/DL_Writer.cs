@@ -164,8 +164,7 @@ namespace Dxflib4NET
         public void Entity(string entTypeName)
         {
             DxfString(0, entTypeName);
-            if (_version >= DL_Codes.VER_2000)
-                Handle(5);
+            Handle(5);
         }
         /// <summary>
         /// Attributes of an entity
@@ -175,15 +174,9 @@ namespace Dxflib4NET
         { 
             // layer name
             DxfString(8, attrib.Layer);
-            // R12 does not accept BYLAYER values.
-            // The value has to be missing in that case.
-            if (_version >= DL_Codes.VER_2000 || 256 != attrib.Color)
-                DxfInt(62, attrib.Color);
-
-            if (_version >= DL_Codes.VER_2000)
-                DxfInt(370, attrib.Width);
-
-            if (_version >= DL_Codes.VER_2000 || attrib.LineType.CompareTo("BYLAYER") == 0)
+            DxfInt(62, attrib.Color);
+            DxfInt(370, attrib.Width);
+            //if (attrib.LineType.CompareTo("BYLAYER") == 0)
                 DxfString(6, attrib.LineType);
         }
         /// <summary>

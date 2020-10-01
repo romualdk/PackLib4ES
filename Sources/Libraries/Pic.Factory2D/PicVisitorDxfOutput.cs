@@ -22,32 +22,21 @@ namespace Pic.Factory2D
         #endregion
 
         #region Helpers
-        public string LineTypeToDxfLayer(PicGraphics.LT lType)
-        { 
+        private string InternalLineTypeToDxfLineType(PicGraphics.LT lType)
+        {
             switch (lType)
             {
-                case PicGraphics.LT.LT_CUT:             return "L5-113";
-                case PicGraphics.LT.LT_PERFOCREASING:   return "L6-133";
-                case PicGraphics.LT.LT_CONSTRUCTION:    return "LCN-27";
-                case PicGraphics.LT.LT_PERFO:           return "EC1-193";
-                case PicGraphics.LT.LT_HALFCUT:         return "LI5-103";
-                case PicGraphics.LT.LT_CREASING:        return "L8-123";
-                case PicGraphics.LT.LT_AXIS:            return "L2-106";
-                case PicGraphics.LT.LT_COTATION:        return "LDM-4";
-                case PicGraphics.LT.LT_GRID:            return "L2-106";
-                default:    return "";
+                case PicGraphics.LT.LT_CUT: return "cut";
+                case PicGraphics.LT.LT_PERFOCREASING: return "crease";
+                case PicGraphics.LT.LT_CONSTRUCTION: return "";
+                case PicGraphics.LT.LT_PERFO: return "";
+                case PicGraphics.LT.LT_HALFCUT: return "partial-cut";
+                case PicGraphics.LT.LT_CREASING: return "crease";
+                case PicGraphics.LT.LT_AXIS: return "";
+                case PicGraphics.LT.LT_COTATION: return "";
+                case PicGraphics.LT.LT_GRID: return "";
+                default: return "";
             }
-
-            // **
-            // "Cut", "L5-113"
-            // "Perfo-Crease", "L6-133"
-            // "Construction", "LCN-27"
-            // "Perfo", "EC1-193"
-            // "Half-Cut", "LI5-103"
-            // "Crease", "L8-123"
-            // "Axis", "L2-106"
-            // "Dimension", "LDM-4"
-            // **
         }
         #endregion
 
@@ -72,49 +61,21 @@ namespace Pic.Factory2D
             dw.TableLineTypes(25);
             dxf.WriteLineType(dw, new DL_LineTypeData("BYBLOCK", 0));
             dxf.WriteLineType(dw, new DL_LineTypeData("BYLAYER", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("CONTINUOUS", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("ACAD_ISO02W100", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("ACAD_ISO03W100", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("ACAD_ISO04W100", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("ACAD_ISO05W100", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("BORDER", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("BORDER2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("BORDERX2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("CENTER", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("CENTER2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("CENTERX2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DASHDOT", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DASHDOT2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DASHDOTX2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DASHED", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DASHED2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DASHEDX2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DIVIDE", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DIVIDE2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DIVIDEX2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DOT", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DOT2", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("DOTX2", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("continuous", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("crease", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("cut", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("partial-cut", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("1-2-x-1-2-cut", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("1-4-x-1-4-cut", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("1-8-x-1-8-cut", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("3-8-x-3-8-cut", 0));
             dw.TableEnd();
             // writing the layers
-            int numberOfLayers = 3;
+            int numberOfLayers = 1;
             dw.tableLayers(numberOfLayers);
-            // CUT
-            dxf.WriteLayer(dw, new DL_LayerData("L5-113", 0),
-                new DL_Attributes("",                       // leave empty
-                    (int)DL_Codes.dxfcolor.red,             // default color
-                    100,                                    // default width
-                    "CONTINUOUS"));                         // default line style
-            // FOLD
-            dxf.WriteLayer(dw, new DL_LayerData("L8-123", 0),
-                new DL_Attributes("",                       // leave empty
-                    (int)DL_Codes.dxfcolor.blue,            // default color
-                    100,                                    // default width
-                    "CONTINUOUS"));                         // default line style
-            // COTATION
-            dxf.WriteLayer(dw, new DL_LayerData("LDM-4", 0),
-                new DL_Attributes("",                       // leave empty
-                    (int)DL_Codes.dxfcolor.green,           // default color
+            dxf.WriteLayer(dw, new DL_LayerData("Layer0", 0),
+                new DL_Attributes("0",                       // leave empty
+                    (int)DL_Codes.dxfcolor.bylayer,         // default color
                     100,                                    // default width
                     "CONTINUOUS"));                         // default line style
             dw.TableEnd();
@@ -148,9 +109,9 @@ namespace Pic.Factory2D
                                     , seg.Pt1.Y
                                     , 0.0
                                     , 256
-                                    , LineTypeToDxfLayer(seg.LineType)
+                                    , ""
                                     )
-                                , new DL_Attributes(LineTypeToDxfLayer(seg.LineType), 256, -1, "BYLAYER")
+                                , new DL_Attributes("0", 256, -1, InternalLineTypeToDxfLineType(seg.LineType))
                                 );
 
                         }
@@ -173,9 +134,9 @@ namespace Pic.Factory2D
                                     arc.Radius,
                                     angd, angd + ango,
                                     256,
-                                    LineTypeToDxfLayer(arc.LineType)
+                                    "0"
                                     ),
-                                new DL_Attributes(LineTypeToDxfLayer(arc.LineType), 256, -1, "BYLAYER")
+                                new DL_Attributes("0", 256, -1, InternalLineTypeToDxfLineType(arc.LineType))
                             );
                         }
                         break;
@@ -196,9 +157,9 @@ namespace Pic.Factory2D
                                         seg.P0.X, seg.P0.Y, 0.0,
                                         seg.P1.X, seg.P1.Y, 0.0,
                                         256,
-                                        LineTypeToDxfLayer(PicGraphics.LT.LT_COTATION)
+                                        "0"
                                         ),
-                                    new DL_Attributes(LineTypeToDxfLayer(PicGraphics.LT.LT_COTATION), 256, -1, "BYLAYER")
+                                    new DL_Attributes("0", 256, -1, InternalLineTypeToDxfLineType(cotation.LineType))
                                     );
                             }
                             // draw text
@@ -208,7 +169,7 @@ namespace Pic.Factory2D
                                     textPt.X, textPt.Y, 0.0,
                                     textSize, 1.0, 0,
                                     1, 2, cotation.Text, "STANDARD", 0.0),
-                                new DL_Attributes(LineTypeToDxfLayer(PicGraphics.LT.LT_COTATION), 256, -1, "BYLAYER"));
+                                new DL_Attributes("0", 256, -1, InternalLineTypeToDxfLineType(cotation.LineType)));
                         }
                         break;
                     case PicEntity.ECode.PE_ELLIPSE:

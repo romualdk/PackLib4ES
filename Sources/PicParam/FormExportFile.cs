@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
+using log4net;
+
 using Microsoft.Win32;
 using Pic.Factory2D;
 
@@ -92,17 +94,28 @@ namespace PicParam
         #endregion
 
         #region Form event handling
-        private void FormExportFile_Load(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-            checkBox_openFile.Checked = Settings.Default.FileExportOpen;
-            FileExtension = Settings.Default.FileExportExtension;
-            fileSelectCtrl.FileName = Path.Combine(Settings.Default.FileExportDirectory, fileName + "." + FileExtension);
+            base.OnLoad(e);
 
-            UpdateFilePath();
-            EnableDisableOk();
+            try
+            {
+                checkBox_openFile.Checked = Settings.Default.FileExportOpen;
+                FileExtension = Settings.Default.FileExportExtension;
+                fileSelectCtrl.FileName = Path.Combine(Settings.Default.FileExportDirectory, fileName + "." + FileExtension);
+
+                UpdateFilePath();
+                EnableDisableOk();
+            }
+            catch (Exception ex)
+            {
+                _log.Error(ex.ToString());
+            }
         }
-        private void FormExportFile_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
+            base.OnClosing(e);
+
             Settings.Default.FileExportOpen = checkBox_openFile.Checked;
             Settings.Default.FileExportExtension = FileExtension;
             Settings.Default.FileExportDirectory = System.IO.Path.GetDirectoryName(fileSelectCtrl.FileName);
@@ -121,6 +134,7 @@ namespace PicParam
 
         #region Data members
         private string fileName;
+        protected ILog _log = LogManager.GetLogger(typeof(FormExportFile));
         #endregion
     }
 }

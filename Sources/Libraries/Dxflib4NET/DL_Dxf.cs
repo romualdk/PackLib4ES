@@ -12,7 +12,7 @@ namespace Dxflib4NET
         #region Constructor
         public DL_Dxf()
         {
-            _version = DL_Codes.dxfversion.AC1009;
+            _version = DL_Codes.dxfversion.AC1027;
         }
         #endregion
 
@@ -25,25 +25,23 @@ namespace Dxflib4NET
             dw.DxfString(9, "$ACADVER");
             switch (_version)
             {
-            case DL_Codes.dxfversion.AC1009:
-                dw.DxfString(1, "AC1009");
-                break;
-            case DL_Codes.dxfversion.AC1012:
-                dw.DxfString(1, "AC1012");
-                break;
-            case DL_Codes.dxfversion.AC1014:
-                dw.DxfString(1, "AC1014");
-                break;
-            case DL_Codes.dxfversion.AC1015:
-                dw.DxfString(1, "AC1015");
-                break;
-            }
-
-            // Newer version require that (otherwise a*cad crashes..)
-            if (_version == DL_Codes.VER_2000)
-            {
-                dw.DxfString(9, "$HANDSEED");
-                dw.DxfHex(5, 0xFFFF);
+                case DL_Codes.dxfversion.AC1009:
+                    dw.DxfString(1, "AC1009");
+                    break;
+                case DL_Codes.dxfversion.AC1012:
+                    dw.DxfString(1, "AC1012");
+                    break;
+                case DL_Codes.dxfversion.AC1014:
+                    dw.DxfString(1, "AC1014");
+                    break;
+                case DL_Codes.dxfversion.AC1015:
+                    dw.DxfString(1, "AC1015");
+                    break;
+                case DL_Codes.dxfversion.AC1027:
+                    dw.DxfString(1, "AC1027");
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -123,427 +121,133 @@ namespace Dxflib4NET
 
         public void WriteLineType(DL_Writer dw, DL_LineTypeData data)
         {
-            if (data.name.Length == 0)
+            if (data.Name.Length == 0)
                 throw new DL_Exception("Line type name must not be empty");
 
-	        // ignore BYLAYER, BYBLOCK for R12
-            string sNameUpper = data.name.ToUpper(); 
-	        if (_version<DL_Codes.VER_2000)
-            {
-                if ((sNameUpper.CompareTo("BYBLOCK") == 0) || (sNameUpper.CompareTo("BYLAYER") == 0))
-                    return;
-            }
+            string sNameUpper = data.Name.ToUpper(); 
 
         	// write id (not for R12)
             if (sNameUpper.CompareTo("BYBLOCK") == 0) {
                 dw.TableLineTypeEntry(0x14);
             } else if (sNameUpper.CompareTo("BYLAYER") == 0) {
                 dw.TableLineTypeEntry(0x15);
-            } else if (sNameUpper.CompareTo("CONTINUOUS") == 0) {
+            } else if (sNameUpper.CompareTo("continuous") == 0) {
                 dw.TableLineTypeEntry(0x16);
             } else {
                 dw.TableLineTypeEntry();
             }
 
-            dw.DxfString(2, data.name);
-    	    dw.DxfInt(70, data.flags);
+            dw.DxfString(2, data.Name);
+    	    dw.DxfInt(70, data.Flags);
 
-            if (sNameUpper.CompareTo("BYBLOCK") == 0) {
+            if (sNameUpper.CompareTo("BYBLOCK") == 0)
+            {
                 dw.DxfString(3, "");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 0);
                 dw.DxfReal(40, 0.0);
-            } else if (sNameUpper.CompareTo("BYLAYER") == 0 ) {
+            }
+            else if (sNameUpper.CompareTo("BYLAYER") == 0)
+            {
                 dw.DxfString(3, "");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 0);
                 dw.DxfReal(40, 0.0);
-            } else if (sNameUpper.CompareTo("CONTINUOUS") == 0) {
+            }
+            else if (sNameUpper.CompareTo("CONTINUOUS") == 0)
+            {
                 dw.DxfString(3, "Solid line");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 0);
                 dw.DxfReal(40, 0.0);
-            } else if (sNameUpper.CompareTo("ACAD_ISO02W100") == 0) {
-                dw.DxfString(3, "ISO Dashed __ __ __ __ __ __ __ __ __ __ _");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 2);
-                dw.DxfReal(40, 15.0);
-                dw.DxfReal(49, 12.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("ACAD_ISO03W100") == 0) {
-                dw.DxfString(3, "ISO Dashed with Distance __    __    __    _");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 2);
-                dw.DxfReal(40, 30.0);
-                dw.DxfReal(49, 12.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                    dw.DxfReal(49, -18.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("ACAD_ISO04W100") == 0) {
-                dw.DxfString(3, "ISO Long Dashed Dotted ____ . ____ . __");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 4);
-                dw.DxfReal(40, 30.0);
-                dw.DxfReal(49, 24.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("ACAD_ISO05W100") == 0) {
-                dw.DxfString(3, "ISO Long Dashed Double Dotted ____ .. __");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 6);
-                dw.DxfReal(40, 33.0);
-                dw.DxfReal(49, 24.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("BORDER") == 0) {
-                dw.DxfString(3, "Border __ __ . __ __ . __ __ . __ __ . __ __ .");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 6);
-                dw.DxfReal(40, 44.45);
-                dw.DxfReal(49, 12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("BORDER2") == 0) {
-                dw.DxfString(3, "Border (.5x) __.__.__.__.__.__.__.__.__.__.__.");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 6);
-                dw.DxfReal(40, 22.225);
-                dw.DxfReal(49, 6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("BORDERX2") == 0) {
-                dw.DxfString(3, "Border (2x) ____  ____  .  ____  ____  .  ___");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 6);
-                dw.DxfReal(40, 88.9);
-                dw.DxfReal(49, 25.4);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 25.4);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("CENTER") == 0) {
-                dw.DxfString(3, "Center ____ _ ____ _ ____ _ ____ _ ____ _ ____");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 4);
-                dw.DxfReal(40, 50.8);
-                dw.DxfReal(49, 31.75);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("CENTER2") == 0) {
-                dw.DxfString(3, "Center (.5x) ___ _ ___ _ ___ _ ___ _ ___ _ ___");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 4);
-                dw.DxfReal(40, 28.575);
-                dw.DxfReal(49, 19.05);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("CENTERX2") == 0) {
-                dw.DxfString(3, "Center (2x) ________  __  ________  __  _____");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 4);
-                dw.DxfReal(40, 101.6);
-                dw.DxfReal(49, 63.5);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DASHDOT") == 0) {
-                dw.DxfString(3, "Dash dot __ . __ . __ . __ . __ . __ . __ . __");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 4);
-                dw.DxfReal(40, 25.4);
-                dw.DxfReal(49, 12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DASHDOT2") == 0) {
-                dw.DxfString(3, "Dash dot (.5x) _._._._._._._._._._._._._._._.");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 4);
-                dw.DxfReal(40, 12.7);
-                dw.DxfReal(49, 6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DASHDOTX2") == 0) {
-                dw.DxfString(3, "Dash dot (2x) ____  .  ____  .  ____  .  ___");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 4);
-                dw.DxfReal(40, 50.8);
-                dw.DxfReal(49, 25.4);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DASHED") == 0) {
-                dw.DxfString(3, "Dashed __ __ __ __ __ __ __ __ __ __ __ __ __ _");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 2);
-                dw.DxfReal(40, 19.05);
-                dw.DxfReal(49, 12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DASHED2") == 0) {
-                dw.DxfString(3, "Dashed (.5x) _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 2);
-                dw.DxfReal(40, 9.525);
-                dw.DxfReal(49, 6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DASHEDX2") == 0) {
-                dw.DxfString(3, "Dashed (2x) ____  ____  ____  ____  ____  ___");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 2);
-                dw.DxfReal(40, 38.1);
-                dw.DxfReal(49, 25.4);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DIVIDE") == 0) {
-                dw.DxfString(3, "Divide ____ . . ____ . . ____ . . ____ . . ____");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 6);
-                dw.DxfReal(40, 31.75);
-                dw.DxfReal(49, 12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DIVIDE2") == 0) {
-                dw.DxfString(3, "Divide (.5x) __..__..__..__..__..__..__..__.._");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 6);
-                dw.DxfReal(40, 15.875);
-                dw.DxfReal(49, 6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DIVIDEX2") == 0) {
-                dw.DxfString(3, "Divide (2x) ________  .  .  ________  .  .  _");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 6);
-                dw.DxfReal(40, 63.5);
-                dw.DxfReal(49, 25.4);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DOT") == 0) {
-                dw.DxfString(3, "Dot . . . . . . . . . . . . . . . . . . . . . .");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 2);
-                dw.DxfReal(40, 6.35);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -6.35);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DOT2") == 0) {
-                dw.DxfString(3, "Dot (.5x) .....................................");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 2);
-                dw.DxfReal(40, 3.175);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -3.175);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else if (sNameUpper.CompareTo("DOTX2") == 0) {
-                dw.DxfString(3, "Dot (2x) .  .  .  .  .  .  .  .  .  .  .  .  .");
-                dw.DxfInt(72, 65);
-                dw.DxfInt(73, 2);
-                dw.DxfReal(40, 12.7);
-                dw.DxfReal(49, 0.0);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-                dw.DxfReal(49, -12.7);
-                if (_version>=DL_Codes.VER_R13)
-                    dw.DxfInt(74, 0);
-            } else {
-                throw new DL_Exception("dxflib warning: DL_Dxf::writeLineType: Unknown Line Type");
             }
-        }
+            else if (sNameUpper.CompareTo("CREASE") == 0)
+            {
+                dw.DxfString(2, "crease");
+                dw.DxfInt(70, 0);
+                dw.DxfString(3, "_______________");
+                dw.DxfInt(72, 65);
+                dw.DxfInt(73, 0);
+                dw.DxfReal(40, 0.0);
+            }
+            else if (sNameUpper.CompareTo("CUT") == 0)
+            {
+                dw.DxfString(2, "cut");
+                dw.DxfInt(70, 0);
+                dw.DxfString(3, "_______________");
+                dw.DxfInt(72, 65);
+                dw.DxfInt(73, 0);
+                dw.DxfReal(40, 0.0);
+            }
+            else if (sNameUpper.CompareTo("PARTIAL-CUT") == 0)
+            {
+                dw.DxfString(2, "partial-cut");
+                dw.DxfInt(70, 0);
+                dw.DxfString(3, "___ _ ___ _ ___");
+                dw.DxfInt(72, 65);
+                dw.DxfInt(73, 4);
+                dw.DxfReal(40, 2.0);
+                dw.DxfReal(49, 0.75);
+                dw.DxfInt(74, 0);
+            }
+            else if (sNameUpper.CompareTo("1-2-X-1-2-CUT") == 0)
+            {
+                dw.DxfString(2, "1-2-x-1-2-cut");
+                dw.DxfInt(70, 0);
+                dw.DxfString(3, "_ _ _ _ _ _ _ _");
+                dw.DxfInt(72, 65);
+                dw.DxfInt(73, 2);
+                dw.DxfReal(40, 1.0);
+                dw.DxfReal(49, 0.5);
+                dw.DxfInt(74, 0);
+            }
+            else if (sNameUpper.CompareTo("1-4-X-1-4-CUT") == 0)
+            {
+                dw.DxfString(2, "1-4-x-1-4-cut");
+                dw.DxfInt(70, 0);
+                dw.DxfString(3, "_ _ _ _ _ _ _ _");
+                dw.DxfInt(72, 65);
+                dw.DxfInt(73, 2);
+                dw.DxfReal(40, 0.5);
+                dw.DxfReal(49, 0.25);
+                dw.DxfInt(74, 0);
+                dw.DxfReal(49, -0.25);
+                dw.DxfInt(74, 0);
+            }            
+            else if (sNameUpper.CompareTo("1-8-X-1-8-CUT") == 0)
+            {
+                dw.DxfString(2, "1-8-x-1-8-cut");
+                dw.DxfInt(70, 0);
+                dw.DxfString(3, "_ _ _ _ _ _ _ _");
+                dw.DxfInt(72, 65);
+                dw.DxfInt(73, 2);
+                dw.DxfReal(40, 0.25);
+                dw.DxfReal(49, 0.125);
+                dw.DxfInt(74, 0);
+                dw.DxfReal(49, -0.125);
+                dw.DxfInt(74, 0);
+            }                
+            else if (sNameUpper.CompareTo("3-8-X-3-8-CUT") == 0)
+            {
+                dw.DxfString(2, "3-8-x-3-8-cut");
+                dw.DxfInt(70, 0);
+                dw.DxfString(3, "_ _ _ _ _ _ _ _");
+                dw.DxfInt(72, 65);
+                dw.DxfInt(73, 2);
+                dw.DxfReal(40, 0.75);
+                dw.DxfReal(49, 0.375);
+                dw.DxfInt(74, 0);
+                dw.DxfReal(49, -0.375);
+                dw.DxfInt(74, 0);
+            }
+            else
+                throw new DL_Exception("dxflib warning: DL_Dxf::writeLineType: Unknown Line Type");        }
 
         public void WritePoint(DL_Writer dw, DL_PointData data, DL_Attributes attrib)
         {
             dw.Entity("POINT");
-            if (_version == DL_Codes.VER_2000)
-            {
-                dw.DxfString(100, "AcDbEntity");
-                dw.DxfString(100, "AcDbPoint");
-            }
+            dw.DxfString(100, "AcDbEntity");
+            dw.DxfString(100, "AcDbPoint");
             dw.EntityAttributes(attrib);
             dw.Coord(DL_Codes.POINT_COORD_CODE, data.x, data.y, data.z);
         }
@@ -551,11 +255,8 @@ namespace Dxflib4NET
         public void WriteLine(DL_Writer dw, DL_LineData data, DL_Attributes attrib)
         {
             dw.Entity("LINE");
-            if (_version == DL_Codes.VER_2000)
-            {
-                dw.DxfString(100, "AcDbEntity");
-                dw.DxfString(100, "AcDbLine");
-            }
+            dw.DxfString(100, "AcDbEntity");
+            dw.DxfString(100, "AcDbLine");
             dw.EntityAttributes(attrib);
             dw.Coord(DL_Codes.LINE_START_CODE, data.x1, data.y1, data.z1);
             dw.Coord(DL_Codes.LINE_END_CODE, data.x2, data.y2, data.z2);
@@ -565,15 +266,11 @@ namespace Dxflib4NET
         public void writeArc(DL_Writer dw, DL_ArcData data, DL_Attributes attrib)
         {
             dw.Entity("ARC");
-            if (_version == DL_Codes.VER_2000)
-                dw.DxfString(100, "AcDbEntity");
+            dw.DxfString(100, "AcDbEntity");
+            dw.DxfString(100, "AcDbArc");
             dw.EntityAttributes(attrib);
-            if (_version == DL_Codes.VER_2000)
-                dw.DxfString(100, "AcDbCircle");
             dw.Coord(10, data.cx, data.cy, data.cz);
             dw.DxfReal(40, data.radius);
-            if (_version == DL_Codes.VER_2000)
-                dw.DxfString(100, "AcDbArc");
             dw.DxfReal(50, data.angle1);
             dw.DxfReal(51, data.angle2);
         }
@@ -581,11 +278,9 @@ namespace Dxflib4NET
         public void writeText(DL_Writer dw, DL_TextData data, DL_Attributes attrib)
         {
             dw.Entity("TEXT");
-            if (_version == DL_Codes.VER_2000)
-                dw.DxfString(100, "AcDbEntity");
+            dw.DxfString(100, "AcDbEntity");
+            dw.DxfString(100, "AcDbText");
             dw.EntityAttributes(attrib);
-            if (_version == DL_Codes.VER_2000)
-                dw.DxfString(100, "AcDbText");
             dw.Coord(10, data.ipx, data.ipy, data.ipz);
             dw.DxfReal(40, data.height);
             dw.DxfString(1, data.text);
@@ -596,8 +291,6 @@ namespace Dxflib4NET
             dw.DxfInt(71, data.textGenerationFlags);
             dw.DxfInt(72, data.hJustification);
             dw.Coord(11, data.apx, data.apy, data.apz);
-            if (_version == DL_Codes.VER_2000)
-                dw.DxfString(100, "AcDbText");
             dw.DxfInt(73, data.vJustification);
         }
 
@@ -717,8 +410,8 @@ namespace Dxflib4NET
             dw.DxfHex(5, 0x1E);
             dw.DxfString(100, "AcDbPlotSettings");
             dw.DxfString(1, "");
-            dw.DxfString(2, "C:\\Program Files\\AutoCAD 2002\\plotters\\DWF ePlot (optimized for plotting).pc3");
-            dw.DxfString(4, "");
+            dw.DxfString(2, "none_device");
+            dw.DxfString(4, "Letter_(8.50_x_11.00_Inches)");
             dw.DxfString(6, "");
             dw.DxfReal(40, 0.0);
             dw.DxfReal(41, 0.0);
@@ -776,7 +469,7 @@ namespace Dxflib4NET
             dw.DxfHex(5, 0x22);
             dw.DxfString(100, "AcDbPlotSettings");
             dw.DxfString(1, "");
-            dw.DxfString(2, "C:\\Program Files\\AutoCAD 2002\\plotters\\DWF ePlot (optimized for plotting).pc3");
+            dw.DxfString(2, "none_device");
             dw.DxfString(4, "");
             dw.DxfString(6, "");
             dw.DxfReal(40, 0.0);
@@ -835,7 +528,7 @@ namespace Dxflib4NET
             dw.DxfHex(5, 0x26);
             dw.DxfString(100, "AcDbPlotSettings");
             dw.DxfString(1, "");
-            dw.DxfString(2, "C:\\Program Files\\AutoCAD 2002\\plotters\\DWF ePlot (optimized for plotting).pc3");
+            dw.DxfString(2, "none_device");
             dw.DxfString(4, "");
             dw.DxfString(6, "");
             dw.DxfReal(40, 0.0);

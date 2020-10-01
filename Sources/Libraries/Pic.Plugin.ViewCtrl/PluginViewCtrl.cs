@@ -683,7 +683,7 @@ namespace Pic.Plugin.ViewCtrl
 
         public PicFactory GetFactory()
         {
-            Pic.Factory2D.PicFactory factory = new Pic.Factory2D.PicFactory();
+            PicFactory factory = new PicFactory();
             Component.CreateFactoryEntities(factory, CurrentParameterStack);
             if (_reflectionX) factory.ProcessVisitor(new PicVisitorTransform(Transform2D.ReflectionX));
             if (_reflectionY) factory.ProcessVisitor(new PicVisitorTransform(Transform2D.ReflectionY));
@@ -693,7 +693,7 @@ namespace Pic.Plugin.ViewCtrl
         public byte[] GetExportFile(string fileExt, Pic.Plugin.ParameterStack stack)
         {
             // build factory
-            Pic.Factory2D.PicFactory factory = new Pic.Factory2D.PicFactory();
+            PicFactory factory = new PicFactory();
             Component.CreateFactoryEntities(factory, stack);
             if (_reflectionX) factory.ProcessVisitor(new PicVisitorTransform(Transform2D.ReflectionX));
             if (_reflectionY) factory.ProcessVisitor(new PicVisitorTransform(Transform2D.ReflectionY));
@@ -707,12 +707,12 @@ namespace Pic.Plugin.ViewCtrl
             // instantiate filter
             PicFilter filter = _showAxes ? PicFilter.FilterNone
                 : PicFilter.FilterCotation | !(new PicFilterLineType(PicGraphics.LT.LT_COTATION) | new PicFilterLineType(PicGraphics.LT.LT_AXIS) );
-            filter = filter & PicFilter.FilterNoZeroEntities;
+            filter &= PicFilter.FilterNoZeroEntities;
 
             // get bounding box
-            Pic.Factory2D.PicVisitorBoundingBox visitorBoundingBox = new Pic.Factory2D.PicVisitorBoundingBox();
+            PicVisitorBoundingBox visitorBoundingBox = new PicVisitorBoundingBox();
             factory.ProcessVisitor(visitorBoundingBox, filter);
-            Pic.Factory2D.Box2D box = visitorBoundingBox.Box;
+            Box2D box = visitorBoundingBox.Box;
             // add margins : 5 % of the smallest value among height 
             box.AddMarginHorizontal(box.Width * 0.05);
             box.AddMarginVertical(box.Height * 0.05);

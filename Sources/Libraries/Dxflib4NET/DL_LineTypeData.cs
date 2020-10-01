@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Dxflib4NET
+﻿namespace Dxflib4NET
 {
     public class DL_LineTypeData
     {
@@ -14,8 +10,8 @@ namespace Dxflib4NET
         /// <param name="lFlags">Line type flags</param>
         public DL_LineTypeData(string lName, int lFlags)
         {
-            name = lName;
-            flags = lFlags;
+            Name = lName;
+            Flags = lFlags;
         }
         #endregion
 
@@ -23,11 +19,11 @@ namespace Dxflib4NET
         /// <summary>
         /// Line type name.
         /// </summary>
-        public string name;
+        public string Name { get; set; }
         /// <summary>
         /// Line type flags.
         /// </summary>
-        public int flags;
+        public int Flags { get; set; }
         #endregion
     }
 }

@@ -140,8 +140,6 @@ namespace PicParam
 
             FormDownload.DatabaseModified += formTV.OnToolStripButtonRoot;
 
-            toolStripButtonRoot.Click += formTV.OnToolStripButtonRoot;
-            _cleanUp.Add(() => toolStripButtonRoot.Click -= formTV.OnToolStripButtonRoot);
             toolStripButtonSearch.Click += formTV.OnToolStripButtonSearch;
             _cleanUp.Add(() => toolStripButtonSearch.Click -= formTV.OnToolStripButtonSearch);
             toolStripButtonCotationsAuto.Click += formTV.OnShowHideCotationsAuto;
@@ -174,14 +172,6 @@ namespace PicParam
             _cleanUp.Add(() => toolStripMI_PicDecoup.Click -= formTV.OnExportPicDecoup);
 #endif
 
-            toolStripMI_DXF.Click += formTV.OnExportDXF;
-            _cleanUp.Add(() => toolStripMI_DXF.Click -= formTV.OnExportDXF);
-            toolStripMI_CFF2.Click += formTV.OnExportCFF2;
-            _cleanUp.Add(() => toolStripMI_CFF2.Click -= formTV.OnExportCFF2);
-            toolStripMI_AI.Click += formTV.OnExportAI;
-            _cleanUp.Add(() => toolStripMI_AI.Click -= formTV.OnExportAI);
-            toolStripMI_PDF.Click += formTV.OnExportPDF;
-            _cleanUp.Add(() => toolStripMI_PDF.Click -= formTV.OnExportPDF);
 #if PROCESSOR
             toolStripButtonSUMMA.Click += formTV.OnToolStripButtonShowProcessor;
             _cleanUp.Add(() => toolStripButtonSUMMA.Click -= formTV.OnToolStripButtonShowProcessor);
@@ -406,7 +396,7 @@ namespace PicParam
             FormEditProfiles form = new FormEditProfiles();
             form.ShowDialog();
         }
-        private void OnParameters(object sender, EventArgs e)
+        private void OnSettings(object sender, EventArgs e)
         {
             try
             {
@@ -476,6 +466,11 @@ namespace PicParam
         {
             try
             {
+                toolStripSBPalletization.Visible = Settings.Default.ShowButtonPalletization;
+                toolStripButtonLayout.Visible = Settings.Default.ShowButtonLayout;
+                toolStripEditComponentCode.Visible = Settings.Default.ShowButtonEditCode;
+                toolStripButtonHelp.Visible = Settings.Default.ShowButtonHelp;
+
                 // for some unknown reasons these data may be changed to 'False' in the user.config file 
                 toolStripMain.Visible = true;
                 menuStripMain.Visible = true;
@@ -495,28 +490,24 @@ namespace PicParam
                 toolStripButtonReflectionY.Enabled = buttonsEnabled;
                 reflectionYToolStripMenuItem.Enabled = buttonsEnabled;
                 toolStripButtonLayout.Enabled = buttonsEnabled;
-                layoutToolStripMenuItem.Enabled = buttonsEnabled;
                 toolStripMenuItemCotationShortLines.Enabled = buttonsEnabled;
                 toolStripButtonCotationsCode.Enabled = buttonsEnabled;
                 toolStripMenuItemCotationsCode.Enabled = buttonsEnabled;
                 toolStripButtonAxes.Enabled = buttonsEnabled;
                 toolStripMenuItemAxes.Enabled = buttonsEnabled;
+                toolStripButtonExport.Enabled = buttonsEnabled;
                 // only allow palletization / case optimisation when a component is selected
-                toolStripMICasePalletAnalysis.Enabled = palletisationAllowed;
-                toolStripMIOptimalCase.Enabled = palletisationAllowed;
-                toolStripMIBundleCaseAnalysis.Enabled = flatPalletisationAllowed;
-                toolStripMIBundlePalletAnalysis.Enabled = flatPalletisationAllowed;
+                if (Settings.Default.ShowButtonPalletization)
+                {
+                    toolStripMICasePalletAnalysis.Enabled = palletisationAllowed;
+                    toolStripMIOptimalCase.Enabled = palletisationAllowed;
+                    toolStripMIBundleCaseAnalysis.Enabled = flatPalletisationAllowed;
+                    toolStripMIBundlePalletAnalysis.Enabled = flatPalletisationAllowed;
+                }
                 // enable export toolbar buttons
                 toolStripButtonExport.Enabled = true;//buttonsEnabled || _webBrowser4PDF.Visible;
-                toolStripSButtonExport.Enabled = buttonsEnabled;
-                toolStripMI_DXF.Enabled = buttonsEnabled;
-                toolStripMI_AI.Enabled = buttonsEnabled;
-                toolStripMI_CFF2.Enabled = buttonsEnabled;
-                toolStripMI_PDF.Enabled = buttonsEnabled;
                 // "File" menu items
                 exportToolStripMenuItem.Enabled = buttonsEnabled;
-                toolStripMenuItemPicGEOM.Enabled = buttonsEnabled && ApplicationAvailabilityChecker.IsAvailable("PicGEOM");
-
                 toolStripButtonEditParameters.Enabled = buttonsEnabled;
 
                 if (null != formTV)
@@ -557,64 +548,6 @@ namespace PicParam
                 _log.Error(ex.ToString());
             }
         }
-        private void ToolStripEditComponentCode_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                /*
-                if (!(_treeViewCtrl.SelectedNode.Tag is NodeTag nodeTag)) return;
-                PPDataContext db = new PPDataContext();
-                Pic.DAL.SQLite.TreeNode treeNode = Pic.DAL.SQLite.TreeNode.GetById(db, nodeTag.TreeNode);
-                if (null == treeNode) return;
-                Document doc = treeNode.Documents(db)[0];
-                if (null == doc) return;
-                Pic.DAL.SQLite.Component comp = doc.Components[0];
-                if (null == comp) return;
-                // output Guid / path
-                Guid outputGuid = Guid.NewGuid();
-                string outputPath = Pic.DAL.SQLite.File.GuidToPath(db, outputGuid, "dll");
-                // form plugin editor
-                FormPluginEditor editorForm = new FormPluginEditor();
-                editorForm.PluginPath = doc.File.Path(db);
-                editorForm.OutputPath = outputPath;
-                if (DialogResult.OK == editorForm.ShowDialog())
-                {
-                    _log.Info("Component successfully modified!");
-                    doc.File.Guid = outputGuid;
-                    db.SubmitChanges();
-                    // clear component cache in plugin viewer
-                    ComponentLoader.ClearCache();
-                    // update pluginviewer
-                    _pluginViewCtrl.PluginPath = outputPath;
-                }
-                */
-            }
-            catch (Exception ex)
-            {
-                _log.Error(ex.ToString());
-            }
-        }
-        private void ToolStripButtonEditParameters_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                /*
-                FormEditDefaultParamValues form = new FormEditDefaultParamValues(_pluginViewCtrl.Dependancies);
-                if (DialogResult.OK == form.ShowDialog())
-                {   // also see on Ok button handler
-                    // clear plugin loader cache
-                    ComponentLoader.ClearCache();
-
-                    if (_pluginViewCtrl.Visible)
-                        _pluginViewCtrl.Refresh();
-                }
-                */
-            }
-            catch (Exception ex)
-            {
-                _log.Error(ex.ToString());
-            }
-        }
         private void ToolStripMenuItemCotationShortLines_Click(object sender, EventArgs e)
         {
             try
@@ -626,6 +559,18 @@ namespace PicParam
                 toolStripMenuItemCotationShortLines.Checked = PicGlobalCotationProperties.ShowShortCotationLines;
                 // save setting
                 Settings.Default.UseCotationShortLines = PicGlobalCotationProperties.ShowShortCotationLines;
+            }
+            catch (Exception ex)
+            {
+                _log.Error(ex.ToString());
+            }
+        }
+        
+        private void OnExportDXF(object sender, EventArgs e)
+        {
+            try
+            {
+
             }
             catch (Exception ex)
             {
@@ -761,6 +706,7 @@ namespace PicParam
         protected static readonly ILog _log = LogManager.GetLogger(typeof(FormMain));
         private List<Action> _cleanUp = new List<Action>();
         private MRUManager mruManager;
-#endregion
+
+        #endregion
     }
 }

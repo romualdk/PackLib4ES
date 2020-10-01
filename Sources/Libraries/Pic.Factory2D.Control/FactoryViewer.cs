@@ -7,6 +7,7 @@ using System.Reflection;
 using Sharp3D.Math.Core;
 
 using log4net;
+using Pic.Factory2D.Control.Properties;
 #endregion
 
 namespace Pic.Factory2D.Control
@@ -198,7 +199,7 @@ namespace Pic.Factory2D.Control
         {
             _showCotations = !_showCotations;
             Refresh();
-            ShowCotationsToggled?.Invoke(this, new EventArgsStatus(_showCotations, _reflectionX, _reflectionY));
+            ShowCotationsToggled?.Invoke(this, new EventArgsStatus(ShowCotations, _reflectionX, _reflectionY));
         }
         public bool Export(string filePath)
         {
@@ -208,8 +209,8 @@ namespace Pic.Factory2D.Control
         {
             try
             {
-                // instantiate filter
-                PicFilter filter = (_showCotations ? PicFilter.FilterNone : !PicFilter.FilterCotation) & PicFilter.FilterNoZeroEntities;
+                // instantiate filter : no quotations + no zero entitites
+                PicFilter filter = PicFilter.FilterCotation & PicFilter.FilterNoZeroEntities;
                 // get bounding box
                 PicVisitorBoundingBox visitorBoundingBox = new PicVisitorBoundingBox();
                 _factory.ProcessVisitor(visitorBoundingBox, filter);
@@ -337,7 +338,7 @@ namespace Pic.Factory2D.Control
         }
         public bool ShowCotations
         {
-            get { return _showCotations; }
+            get => _showCotations;
             set
             {
                 _showCotations = value;
@@ -477,13 +478,14 @@ namespace Pic.Factory2D.Control
         }
 #endregion
 
-#region Data members
+        #region Data members
         protected static readonly ILog _log = LogManager.GetLogger(typeof(FactoryViewer));
         PicGraphicsControl _picGraphics;
         PicFactory _factory = new PicFactory();
         private Point _mousePositionPrev;
-        private bool _reflectionX = false, _reflectionY = false, _showCotations = false;
+        private bool _reflectionX = false, _reflectionY = false;
         private CardboardFormatLoader _cardboardFormatLoader;
+        private bool  _showCotations = false;
 
         public delegate void StatusChanged(object sender, EventArgsStatus e);
         public event StatusChanged ShowCotationsToggled;
@@ -491,7 +493,7 @@ namespace Pic.Factory2D.Control
         public event StatusChanged ReflectionYToggled;
 
         private readonly double MarginPerc = 0.01;
-#endregion
+        #endregion
     }
 #endregion
 

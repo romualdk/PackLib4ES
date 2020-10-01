@@ -273,9 +273,9 @@ namespace Pic.Plugin.ViewCtrl
                 PicAutoQuotation.BuildQuotation(factory);
 
             // instantiate filter
-            PicFilter filter = _showAxes ? PicFilter.FilterNone
-                : PicFilter.FilterCotation | !(new PicFilterLineType(PicGraphics.LT.LT_COTATION) | new PicFilterLineType(PicGraphics.LT.LT_AXIS));
-            filter = filter & PicFilter.FilterNoZeroEntities;
+            PicFilter filter = !PicFilter.FilterCotation
+                & !(new PicFilterLineType(PicGraphics.LT.LT_COTATION) | new PicFilterLineType(PicGraphics.LT.LT_AXIS))
+                & PicFilter.FilterNoZeroEntities;
 
             // get bounding box
             PicVisitorBoundingBox visitorBoundingBox = new PicVisitorBoundingBox();
