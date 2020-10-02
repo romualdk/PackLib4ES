@@ -38,6 +38,16 @@ namespace Pic.Factory2D
                 default: return "";
             }
         }
+        private int InternalLineTypeToDxfColor(PicGraphics.LT lType)
+        {
+            switch (lType)
+            {
+                case PicGraphics.LT.LT_CUT: return 7;
+                case PicGraphics.LT.LT_CREASING: return 1;
+                case PicGraphics.LT.LT_HALFCUT: return 7;
+                default: return 256;
+            }
+        }
         #endregion
 
         #region PicFactoryVisitor overrides
@@ -48,9 +58,11 @@ namespace Pic.Factory2D
         /// <param name="factory"></param>
         public override void Initialize(PicFactory factory)
         {
-            DL_Codes.dxfversion version = DL_Codes.dxfversion.AC1012;
+           
+            DL_Codes.dxfversion version = DL_Codes.dxfversion.AC1027;
             dw = new DL_Writer(version);
             dxf = new DL_Dxf();
+            /*
             dxf.WriteHeader(dw);
             dw.SectionEnd();
             // opening the table section
@@ -58,10 +70,10 @@ namespace Pic.Factory2D
             // writing viewports
             dxf.WriteVPort(dw);
             // writing line types
-            dw.TableLineTypes(25);
-            dxf.WriteLineType(dw, new DL_LineTypeData("BYBLOCK", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("BYLAYER", 0));
-            dxf.WriteLineType(dw, new DL_LineTypeData("continuous", 0));
+            dw.TableLineTypes(8);
+            dxf.WriteLineType(dw, new DL_LineTypeData("ByBlock", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("ByLayer", 0));
+            dxf.WriteLineType(dw, new DL_LineTypeData("Continuous", 0));
             dxf.WriteLineType(dw, new DL_LineTypeData("crease", 0));
             dxf.WriteLineType(dw, new DL_LineTypeData("cut", 0));
             dxf.WriteLineType(dw, new DL_LineTypeData("partial-cut", 0));
@@ -80,6 +92,10 @@ namespace Pic.Factory2D
                     "CONTINUOUS"));                         // default line style
             dw.TableEnd();
             dw.SectionEnd();
+            */
+            
+            dxf.WritePredefinedHeader(dw);
+            
             // write all entities
             dw.SectionEntities();
         }
@@ -108,10 +124,10 @@ namespace Pic.Factory2D
                                     , seg.Pt1.X	// end point
                                     , seg.Pt1.Y
                                     , 0.0
-                                    , 256
-                                    , ""
+                                    , InternalLineTypeToDxfColor(seg.LineType)
+                                    , "0"
                                     )
-                                , new DL_Attributes("0", 256, -1, InternalLineTypeToDxfLineType(seg.LineType))
+                                , new DL_Attributes("0", InternalLineTypeToDxfColor(seg.LineType), -1, InternalLineTypeToDxfLineType(seg.LineType))
                                 );
 
                         }
@@ -128,15 +144,15 @@ namespace Pic.Factory2D
 	                        else
 		                        ango = ang;
                             
-                            dxf.writeArc(dw,
+                            dxf.WriteArc(dw,
                                 new DL_ArcData(
                                     arc.Center.X, arc.Center.Y, 0.0,
                                     arc.Radius,
                                     angd, angd + ango,
-                                    256,
+                                    InternalLineTypeToDxfColor(arc.LineType),
                                     "0"
                                     ),
-                                new DL_Attributes("0", 256, -1, InternalLineTypeToDxfLineType(arc.LineType))
+                                new DL_Attributes("0", InternalLineTypeToDxfColor(arc.LineType), -1, InternalLineTypeToDxfLineType(arc.LineType))
                             );
                         }
                         break;
@@ -156,20 +172,20 @@ namespace Pic.Factory2D
                                     new DL_LineData(
                                         seg.P0.X, seg.P0.Y, 0.0,
                                         seg.P1.X, seg.P1.Y, 0.0,
-                                        256,
+                                        InternalLineTypeToDxfColor(cotation.LineType),
                                         "0"
                                         ),
-                                    new DL_Attributes("0", 256, -1, InternalLineTypeToDxfLineType(cotation.LineType))
+                                    new DL_Attributes("0", InternalLineTypeToDxfColor(cotation.LineType), -1, InternalLineTypeToDxfLineType(cotation.LineType))
                                     );
                             }
                             // draw text
-                            dxf.writeText(dw,
+                            dxf.WriteText(dw,
                                 new DL_TextData(
                                     textPt.X, textPt.Y, 0.0,
                                     textPt.X, textPt.Y, 0.0,
                                     textSize, 1.0, 0,
                                     1, 2, cotation.Text, "STANDARD", 0.0),
-                                new DL_Attributes("0", 256, -1, InternalLineTypeToDxfLineType(cotation.LineType)));
+                                new DL_Attributes("0", InternalLineTypeToDxfColor(cotation.LineType), -1, InternalLineTypeToDxfLineType(cotation.LineType)));
                         }
                         break;
                     case PicEntity.ECode.PE_ELLIPSE:

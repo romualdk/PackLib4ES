@@ -1,4 +1,6 @@
 ﻿#region Using directives
+using System.IO;
+using System.Reflection;
 #endregion
 
 namespace Dxflib4NET
@@ -17,6 +19,13 @@ namespace Dxflib4NET
         #endregion
 
         #region Write methods
+        public void WritePredefinedHeader(DL_Writer dw)
+        {
+            string dxfHeaderPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "dxfHeader.dxf");
+            string s = File.ReadAllText(dxfHeaderPath);
+            dw.DxfDirectString(s);        
+        }
+
         public void WriteHeader(DL_Writer dw)
         {
             dw.Comment(string.Concat("dxflib ", DL_Codes.DL_VERSION));
@@ -131,7 +140,7 @@ namespace Dxflib4NET
                 dw.TableLineTypeEntry(0x14);
             } else if (sNameUpper.CompareTo("BYLAYER") == 0) {
                 dw.TableLineTypeEntry(0x15);
-            } else if (sNameUpper.CompareTo("continuous") == 0) {
+            } else if (sNameUpper.CompareTo("CONTINUOUS") == 0) {
                 dw.TableLineTypeEntry(0x16);
             } else {
                 dw.TableLineTypeEntry();
@@ -163,8 +172,6 @@ namespace Dxflib4NET
             }
             else if (sNameUpper.CompareTo("CREASE") == 0)
             {
-                dw.DxfString(2, "crease");
-                dw.DxfInt(70, 0);
                 dw.DxfString(3, "_______________");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 0);
@@ -172,8 +179,6 @@ namespace Dxflib4NET
             }
             else if (sNameUpper.CompareTo("CUT") == 0)
             {
-                dw.DxfString(2, "cut");
-                dw.DxfInt(70, 0);
                 dw.DxfString(3, "_______________");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 0);
@@ -181,8 +186,6 @@ namespace Dxflib4NET
             }
             else if (sNameUpper.CompareTo("PARTIAL-CUT") == 0)
             {
-                dw.DxfString(2, "partial-cut");
-                dw.DxfInt(70, 0);
                 dw.DxfString(3, "___ _ ___ _ ___");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 4);
@@ -192,8 +195,6 @@ namespace Dxflib4NET
             }
             else if (sNameUpper.CompareTo("1-2-X-1-2-CUT") == 0)
             {
-                dw.DxfString(2, "1-2-x-1-2-cut");
-                dw.DxfInt(70, 0);
                 dw.DxfString(3, "_ _ _ _ _ _ _ _");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 2);
@@ -203,8 +204,6 @@ namespace Dxflib4NET
             }
             else if (sNameUpper.CompareTo("1-4-X-1-4-CUT") == 0)
             {
-                dw.DxfString(2, "1-4-x-1-4-cut");
-                dw.DxfInt(70, 0);
                 dw.DxfString(3, "_ _ _ _ _ _ _ _");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 2);
@@ -216,8 +215,6 @@ namespace Dxflib4NET
             }            
             else if (sNameUpper.CompareTo("1-8-X-1-8-CUT") == 0)
             {
-                dw.DxfString(2, "1-8-x-1-8-cut");
-                dw.DxfInt(70, 0);
                 dw.DxfString(3, "_ _ _ _ _ _ _ _");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 2);
@@ -229,8 +226,6 @@ namespace Dxflib4NET
             }                
             else if (sNameUpper.CompareTo("3-8-X-3-8-CUT") == 0)
             {
-                dw.DxfString(2, "3-8-x-3-8-cut");
-                dw.DxfInt(70, 0);
                 dw.DxfString(3, "_ _ _ _ _ _ _ _");
                 dw.DxfInt(72, 65);
                 dw.DxfInt(73, 2);
@@ -260,22 +255,22 @@ namespace Dxflib4NET
             dw.EntityAttributes(attrib);
             dw.Coord(DL_Codes.LINE_START_CODE, data.x1, data.y1, data.z1);
             dw.Coord(DL_Codes.LINE_END_CODE, data.x2, data.y2, data.z2);
-            dw.DxfInt(DL_Codes.COLOUR_CODE, data.color);
         }
 
-        public void writeArc(DL_Writer dw, DL_ArcData data, DL_Attributes attrib)
+        public void WriteArc(DL_Writer dw, DL_ArcData data, DL_Attributes attrib)
         {
             dw.Entity("ARC");
             dw.DxfString(100, "AcDbEntity");
-            dw.DxfString(100, "AcDbArc");
             dw.EntityAttributes(attrib);
+            dw.DxfString(100, "AcDbCircle");
             dw.Coord(10, data.cx, data.cy, data.cz);
             dw.DxfReal(40, data.radius);
+            dw.DxfString(100, "AcDbArc");
             dw.DxfReal(50, data.angle1);
             dw.DxfReal(51, data.angle2);
         }
 
-        public void writeText(DL_Writer dw, DL_TextData data, DL_Attributes attrib)
+        public void WriteText(DL_Writer dw, DL_TextData data, DL_Attributes attrib)
         {
             dw.Entity("TEXT");
             dw.DxfString(100, "AcDbEntity");
@@ -324,9 +319,7 @@ namespace Dxflib4NET
                     dw.DxfInt(290, 0);
                 }
             }
-            if (_version>=DL_Codes.VER_2000 && attrib.Width!=-1) {
-                dw.DxfInt(370, attrib.Width);
-            }
+            dw.DxfInt(370, attrib.Width);
             if (_version>=DL_Codes.VER_2000) {
                 dw.DxfHex(390, 0xF);
             }

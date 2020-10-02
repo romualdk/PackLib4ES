@@ -15,6 +15,12 @@
              />
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="yes"/>
+
+    <ComponentGroup Id="DxfExportHeader">
+      <Component Id="DxfHeader_dxf" Directory="Bin" Guid="{EA14FF68-C5E8-483E-991C-65279B7A3A98}">
+        <File Source="$(var.PicParamBinDir)\..\..\..\Libraries\Dxflib4NET\dxfHeader.dxf" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
     
 
     <Feature Id="ProductFeature" Title="Coalesce Parametric Design" Level="1">
@@ -25,6 +31,7 @@
       <ComponentRef Id="ProgramMenuShortcutComp"/>
       <ComponentRef Id="DesktopShortcutComp"/>
       <ComponentRef Id="CA_PLMPackLibExeConfig"/>
+      <ComponentRef Id="DxfHeader_dxf"/>
     </Feature>
 
 

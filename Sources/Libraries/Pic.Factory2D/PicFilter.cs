@@ -207,7 +207,7 @@ namespace Pic.Factory2D
             if (null == typedDrawable) return true;
             return (typedDrawable.Length > _epsilon);
         }
-        private static double _epsilon = 0.1;
+        private static double _epsilon = 0.01;
     }
     #endregion
 

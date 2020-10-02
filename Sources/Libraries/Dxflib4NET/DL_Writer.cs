@@ -104,11 +104,8 @@ namespace Dxflib4NET
         {
             DxfString(0, "TABLE");
             DxfString(2, name);
-            if (_version >= DL_Codes.VER_2000)
-            {
-                DxfHex(5, handle);
-                DxfString(100, "AcDbSymbolTable");
-            }
+            DxfHex(5, handle);
+            DxfString(100, "AcDbSymbolTable");
             DxfInt(70, num);
         }
         /// <summary>
@@ -174,10 +171,9 @@ namespace Dxflib4NET
         { 
             // layer name
             DxfString(8, attrib.Layer);
+            DxfString(6, attrib.LineType);
             DxfInt(62, attrib.Color);
-            DxfInt(370, attrib.Width);
-            //if (attrib.LineType.CompareTo("BYLAYER") == 0)
-                DxfString(6, attrib.LineType);
+            DxfReal(370, attrib.Width != -1.0 ? attrib.Width : 0.0);
         }
         /// <summary>
         /// Subclass
@@ -218,28 +214,15 @@ namespace Dxflib4NET
         /// Line type (must be in the TABLES section LTYPE)
         /// </summary>
         /// <param name="h">Line type handle</param>
-        public void TableLineTypeEntry(long h)
+        public void TableLineTypeEntry(long h = 0)
         {
             DxfString(0, "LTYPE");
-            if (_version >= DL_Codes.VER_2000)
-            {
-                if (h == 0)
-                    Handle();
-                else
-                    DxfHex(5, h);
-                DxfString(100, "AcDbSymbolTableRecord");
-                DxfString(100, "AcDbLinetypeTableRecord");
-            }
-        }
-        public void TableLineTypeEntry()
-        {
-            DxfString(0, "LTYPE");
-            if (_version >= DL_Codes.VER_2000)
-            {
+            if (h == 0)
                 Handle();
-                DxfString(100, "AcDbSymbolTableRecord");
-                DxfString(100, "AcDbLinetypeTableRecord");
-            }
+            else
+                DxfHex(5, h);
+            DxfString(100, "AcDbSymbolTableRecord");
+            DxfString(100, "AcDbLinetypeTableRecord");
         }
         /// <summary>
         /// Appid (must be in the TABLES section APPID).
@@ -473,6 +456,11 @@ namespace Dxflib4NET
             _fileBuilder.Append(gc < 10 ? "  " : (gc < 100 ? " " : ""));
             _fileBuilder.Append(gc);
             _fileBuilder.AppendLine();
+            _fileBuilder.Append(value);
+            _fileBuilder.AppendLine();
+        }
+        public virtual void DxfDirectString(string value)
+        {
             _fileBuilder.Append(value);
             _fileBuilder.AppendLine();
         }
