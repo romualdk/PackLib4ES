@@ -242,8 +242,8 @@ namespace Dxflib4NET
         {
             dw.Entity("POINT");
             dw.DxfString(100, "AcDbEntity");
-            dw.DxfString(100, "AcDbPoint");
             dw.EntityAttributes(attrib);
+            dw.DxfString(100, "AcDbPoint");
             dw.Coord(DL_Codes.POINT_COORD_CODE, data.x, data.y, data.z);
         }
 
@@ -251,8 +251,8 @@ namespace Dxflib4NET
         {
             dw.Entity("LINE");
             dw.DxfString(100, "AcDbEntity");
-            dw.DxfString(100, "AcDbLine");
             dw.EntityAttributes(attrib);
+            dw.DxfString(100, "AcDbLine");
             dw.Coord(DL_Codes.LINE_START_CODE, data.x1, data.y1, data.z1);
             dw.Coord(DL_Codes.LINE_END_CODE, data.x2, data.y2, data.z2);
         }

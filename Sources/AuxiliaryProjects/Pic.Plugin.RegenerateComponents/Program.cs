@@ -1,16 +1,12 @@
 ﻿#region Using directives
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Data.SqlTypes;
-using System.Drawing;
 
+using System.Text.RegularExpressions;
 using System.CodeDom.Compiler;
-using System.Runtime.Serialization.Formatters;
 #endregion
 
 namespace Pic.Plugin.RegenerateComponents
@@ -26,6 +22,8 @@ namespace Pic.Plugin.RegenerateComponents
 
             foreach (string filePath in Directory.GetFiles(folderSources, "*.cs", SearchOption.AllDirectories))
             {
+                ReplaceString(filePath, "\"Perfo\"", "\"1-2-x-1-2-cut\"");
+
                 string sAuthor = string.Empty;
                 string sName = string.Empty;
                 string sDescription = string.Empty;
@@ -98,6 +96,25 @@ namespace Pic.Plugin.RegenerateComponents
                     Console.WriteLine(ex.Message);
                 }
             }
+        }
+
+        private static void ReplaceString(string filename, string search, string replace)
+        {
+            StreamReader sr = new StreamReader(filename);
+            string[] rows = Regex.Split(sr.ReadToEnd(), "\r\n");
+            sr.Close();
+
+            StreamWriter sw = new StreamWriter(filename);
+            for (int i = 0; i < rows.Length; i++)
+            {
+                if (rows[i].Contains(search))
+                {
+                    rows[i] = rows[i].Replace(search, replace);
+                    Console.WriteLine($"file: {Path.GetFileName(filename)}");
+                }
+                sw.WriteLine(rows[i]);
+            }
+            sw.Close();
         }
     }
 }

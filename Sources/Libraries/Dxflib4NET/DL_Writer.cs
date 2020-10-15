@@ -27,7 +27,7 @@ namespace Dxflib4NET
         {
             _fileBuilder = new StringBuilder();
             _version = version;
-            m_handle = 0x30;
+            m_handle = 0x100;
             _modelSpaceHandle = 0;
             _paperSpaceHandle = 0;
             _paperSpace0Handle = 0;
