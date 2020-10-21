@@ -22,9 +22,6 @@
 <Component Id="cmp9AB63657FF74053796BB70EF4EB4DEC1" Directory="Bin" Guid="D839814F-C6B1-41A9-9315-0F5C6CD27F1D"> 
 <File Id="filA2DB7C10CEA132286549E66CED545288" KeyPath="yes" Source="$(var.PicParamBinDir)\DesLib4NET.dll" /> 
 </Component> 
-<Component Id="cmpD275270A59438361B62053A415ABC6CB" Directory="Bin" Guid="7FD01D65-0EC2-4927-9C8D-9106F5006BF2"> 
-<File Id="filB6B1B12474DA260C9D4C2DEC4DD18C70" KeyPath="yes" Source="$(var.PicParamBinDir)\dxfHeader.dxf" /> 
-</Component> 
 <Component Id="cmpE68B6D1C22D388F58745F5178E13CFFE" Directory="Bin" Guid="A5A0BA19-9066-4AA0-BB3C-5E9C3AD0522E"> 
 <File Id="fil824000693C43444D0622930625C3AB51" KeyPath="yes" Source="$(var.PicParamBinDir)\Dxflib4NET.dll" /> 
 </Component> 
@@ -96,9 +93,6 @@
 </Component> 
 <Component Id="cmp54FF44B58F688695B1C505193006E005" Directory="Bin" Guid="18A91740-147A-4CF3-92A8-893B0F38058C"> 
 <File Id="filECB0B3F3C5AE362A9E42F6CAB53E673A" KeyPath="yes" Source="$(var.PicParamBinDir)\PLMPackLib.exe" /> 
-</Component> 
-<Component Id="cmpECDAE704EF0AB9862A95DC073D508E2A" Directory="Bin" Guid="EEF097E0-8241-4C59-97FF-10D7EA580B43"> 
-<File Id="fil6048E809D8960C1514328B157F3E631C" KeyPath="yes" Source="$(var.PicParamBinDir)\PLMPackLib.exe.config" /> 
 </Component> 
 <Component Id="cmp64874A6AA44AE8EA5EF21DE166ACA1D3" Directory="Bin" Guid="DDA64BE2-36C1-427F-99E9-107817B2BAB0"> 
 <File Id="fil4CA2823E816DFAAF212EF70D25DFA665" KeyPath="yes" Source="$(var.PicParamBinDir)\RichTextBoxAppender.dll" /> 
