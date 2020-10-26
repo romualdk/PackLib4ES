@@ -2,6 +2,7 @@ del /q "..\..\PicParam\bin\Release\*.pdb"
 del /q "..\..\PicParam\bin\Release\*.dll.config"
 del /q "..\..\PicParam\bin\Release\*.xml"
 del /q "..\..\PicParam\bin\Release\*.resx"
+del /q "..\..\PicParam\bin\Release\PLMPackLib.exe.config
 
 rmdir /s /q "..\..\PicParam\bin\Release\de"
 rmdir /s /q "..\..\PicParam\bin\Release\es"
